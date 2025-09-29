@@ -51,7 +51,7 @@ pre: " <b> 1.1. </b> "
     * AWS IAM và AWS IAM Identity Center là hai dịch vụ riêng biệt để quản lý access.
     * AWS IAM tập trung vào việc quản lý người dùng đơn lẻ với credentials và permissions riêng.
     * AWS IAM Identity Center (trước đây là AWS SSO) cung cấp centralized sign-in, cho phép users truy cập nhiều AWS accounts và roles chỉ với một lần đăng nhập.
-    * IAM Identity Center thường được ưa chuộng trong organizational environments để quản lý users và access dễ dàng hơn.
+    * IAM Identity Center thường được ưa chuộng trong môi trường doanh nghiệp để quản lý quyền và người dùng dễ dàng hơn.
 
 * Củng cố hiểu biết về access management và security trên AWS thông qua thực hành trực tiếp.  
 
