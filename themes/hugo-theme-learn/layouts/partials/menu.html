@@ -35,11 +35,11 @@
         {{end}}
       </ul>
     </section>
-    {{end}} {{ if or .Site.IsMultiLingual $showvisitedlinks }}
+    {{end}} {{ if or hugo.IsMultilingual $showvisitedlinks }}
     <section id="prefooter">
       <hr />
       <ul>
-        {{ if and .Site.IsMultiLingual (not
+        {{ if and hugo.IsMultilingual (not
         .Site.Params.DisableLanguageSwitchingButton)}}
         <li>
           <a class="padding">
@@ -111,7 +111,7 @@ $currentNode.File }}{{ $currentFileUniqueID = .UniqueID }}{{ end }} {{with
 <li
   data-nav-id="{{.RelPermalink}}"
   title="{{.Title}}"
-  class="dd-item 
+  class="dd-item
         {{if .IsAncestor $currentNode }}parent{{end}}
         {{if eq .File.UniqueID $currentFileUniqueID}}active{{end}}
         {{if .Params.alwaysopen}}parent{{end}}
