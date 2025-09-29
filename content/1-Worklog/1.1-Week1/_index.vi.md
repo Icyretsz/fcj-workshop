@@ -5,55 +5,55 @@ weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 
-### Mục tiêu tuần 1:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Mục tiêu Tuần 1:
+
+* Làm quen và kết nối với các thành viên của First Cloud Journey.
+* Hiểu các dịch vụ cơ bản của AWS, cách quản lý chi phí và ngân sách.
+* Hiểu các phương pháp quản lý truy cập trên AWS.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
+| Ngày | Nhiệm vụ                                                                                                                                                                                                                                                                                                                                                      | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo                                                                                                                                                                                                                                                                |
+| ---- |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|-----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 2    | - Làm quen với các thành viên FCJ, thành lập nhóm project <br> - Đọc và ghi chú các quy định, nội quy của đơn vị thực tập                                                                                                                                                                                                                                     | 09/08/2025   | 09/08/2025      |
+| 3    | - Tìm hiểu về AWS và các loại dịch vụ                                                                                                                                                                                                                                                                                                                         | 09/09/2025   | 09/10/2025      | <https://cloudjourney.awsstudygroup.com/> <https://aws.amazon.com/>                                                                                                                                                                                                               |
+| 4    | - Tìm hiểu về AWS và các loại dịch vụ                                                                                                                                                                                                                                                                                                                         | 09/09/2025   | 09/10/2025      | <https://cloudjourney.awsstudygroup.com/> <https://aws.amazon.com/>                                                                                                                                                                                                               |
+| 5    | - Học cách quản lý usage costs trên AWS bằng AWS Budgets <br> - Tìm hiểu về access management với AWS IAM và AWS Identity Center <br> **Practice:** <br> - Tạo cost budget, usage budget, reservation budget và savings plans budget                                                                                                                          | 09/11/2025   | 09/12/2025      | <https://000007.awsstudygroup.com/> <https://docs.aws.amazon.com/cost-management/latest/userguide/what-is-costmanagement.html>                                                                                                                                                    |
+| 6    | **Practice:** <br> **- AWS IAM** <br> + Tạo IAM user <br> + Tạo policies <br> + Tạo roles <br> + Cho IAM user assume role <br> + Log in và test authorization với assumed role <br> **- IAM Identity Center** <br> + Tạo user group <br> + Assign user vào group <br> + Tạo và attach permission set cho group và account <br> + Log in và test authorization | 09/12/2025   | 09/14/2025      | <https://000002.awsstudygroup.com/> <https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html> <https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html> <https://www.youtube.com/watch?v=gpquYmcpZpo> <https://www.youtube.com/watch?v=_KhrGFV_Npw&t=659s> |
 ### Kết quả đạt được tuần 1:
+* Làm quen được bạn bè mới.
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Tìm hiểu sơ lược và khám phá về các dịch vụ của AWS.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Nắm vững kiến thức về quản lý costs trên AWS với **AWS Budgets**:
+    * Tạo cost budgets
+    * Tạo usage budgets
+    * Tạo reservation budgets
+    * Tạo savings plans budgets
+    * Ý thức hơn về costs và budgets. Hình thành thói quen kiểm tra tài liệu về chính sách chi phí trước khi sử dụng bất kỳ dịch vụ AWS nào
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Học và thực hành với **AWS IAM**:
+    * Tạo IAM users
+    * Tạo và gắn policies
+    * Tạo roles
+    * Cho IAM user assume role
+    * Log in và test authorization với roles đã gắn
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Học và thực hành với **AWS Identity Center**:
+    * Tạo user groups
+    * Assign users vào groups
+    * Tạo và attach permission sets cho groups và accounts
+    * Log in và test authorization với permissions set đã gắn
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Nghiên cứu sự khác biệt giữa **AWS IAM** và **AWS IAM Identity Center**:
+    * AWS IAM và AWS IAM Identity Center là hai dịch vụ riêng biệt để quản lý access.
+    * AWS IAM tập trung vào việc quản lý người dùng đơn lẻ với credentials và permissions riêng.
+    * AWS IAM Identity Center (trước đây là AWS SSO) cung cấp centralized sign-in, cho phép users truy cập nhiều AWS accounts và roles chỉ với một lần đăng nhập.
+    * IAM Identity Center thường được ưa chuộng trong organizational environments để quản lý users và access dễ dàng hơn.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Củng cố hiểu biết về access management và security trên AWS thông qua thực hành trực tiếp.  
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
 
 
