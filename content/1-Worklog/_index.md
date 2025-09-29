@@ -8,9 +8,9 @@ pre: " <b> 1. </b> "
 
 **Week 1:** [Getting familiar with AWS. Learned about costs and budgets, access management.](1.1-week1/)
 
-**Week 2:** [Doing task A...](1.2-week2/)
+**Week 2:** [Getting familiar with basic AWS services: VPC, EC2, S3](1.2-week2/)
 
-**Week 3:** [Doing task B...](1.3-week3/)
+**Week 3:** [Getting familiar with intermediate AWS services: RDS, Lightsail, EC2 auto Scaling, CloudWatch](1.3-week3/)
 
 **Week 4:** [Doing task C...](1.4-week4/)
 

@@ -9,8 +9,8 @@ pre: " <b> 1.2. </b> "
 
 ### Week 2 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Discuss with teammates on the first project.
+* Explore and practice on AWS VPC, EC2 and S3.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                       | Start Date | Completion Date | Reference Material                                                                                                                                                                                                      |
@@ -25,10 +25,10 @@ pre: " <b> 1.2. </b> "
 ### Week 2 Achievements:
 
 * Met with teammates and discussed the first project plan.
-  * Determined the theme of project
+  * Determined the theme of project: a type racing game called TypeRush
   * Created team Figma
-  * Debated on architecture
-  * Distributed initial task
+  * Debated on architecture and tech stack: microservices. Stack: React, Tailwind, Typescript, NodeJS, with Websocket for multiplayer
+  * Distributed initial task: I got designing game logic, setting up Websocket and build prototype
   * Initialized Github repo
 
 * Learned the basics of **AWS Networking**:

@@ -23,10 +23,10 @@ pre: " <b> 1.2. </b> "
 ### Kết quả đạt được tuần 2:
 
 * Gặp gỡ teammates và thảo luận kế hoạch cho project đầu tiên.
-    * Xác định chủ đề của project
+    * Xác định chủ đề của project: trò chơi đua gõ phím với tên gọi TypeRush
     * Tạo team Figma
-    * Thảo luận về kiến trúc hệ thống
-    * Phân chia nhiệm vụ ban đầu
+    * Thảo luận về kiến trúc hệ thống và stack: quyết định theo Microservices. Stack gồm React, Tailwind, Typescript, NodeJS, sử dụng Websocket cho phần Multiplayer
+    * Phân chia nhiệm vụ ban đầu: mình đảm nhiệm thiết kế logic trò chơi, cài đặt Websocket và tạo prototype
     * Khởi tạo Github repo
 
 * Học kiến thức cơ bản về **AWS Networking**:

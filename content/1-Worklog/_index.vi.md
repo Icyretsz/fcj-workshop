@@ -8,9 +8,9 @@ pre: " <b> 1. </b> "
 
 **Tuần 1:** [Làm quen với AWS và các dịch vụ cơ bản trong AWS. Tìm hiểu về costs và budgets, quản lý người dùng và truy cập.](1.1-week1/)
 
-**Tuần 2:** [Làm công việc A...](1.2-week2/)
+**Tuần 2:** [Tìm hiểu và thực hành với các dịch vụ AWS cơ bản: VPC, EC2, S3](1.2-week2/)
 
-**Tuần 3:** [Làm công việc B...](1.3-week3/)
+**Tuần 3:** [Tìm hiểu và thực hành với các dịch vụ intermediate: RDS, Lightsail, tự động scale với EC2, Cloudwatch](1.3-week3/)
 
 **Tuần 4:** [Làm công việc C...](1.4-week4/)
 

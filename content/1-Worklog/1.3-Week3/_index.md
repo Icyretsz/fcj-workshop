@@ -5,53 +5,36 @@ weight: 1
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
 
 ### Week 3 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Learn and practice intermediate AWS services.
+* Gain hands-on experience with managed database, compute optimization, autoscaling, and monitoring.
+* Start building the first project main game prototype
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Task                                                                                                                                                                                                                                                                              | Start Date | Completion Date | Reference Material                                                                                                                                                                                                                                    |
+|-----|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 2   | - Learn about **Amazon RDS** and supported engines (MySQL, PostgreSQL, etc.) <br> - **Practice:** <br>&emsp; + Create RDS instance <br>&emsp; + Configure security groups <br>&emsp; + Connect via client <br>&emsp; + Create DB, insert data                                     | 09/22/2025 | 09/22/2025      | <https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html> <https://www.youtube.com/watch?v=GvUaA9cygUk&pp=ygUHYXdzIHJkcw%3D%3D> <https://www.youtube.com/watch?v=GvUaA9cygUk&pp=ygUHYXdzIHJkcw%3D%3D> <https://000045.awsstudygroup.com/> |
+| 3   | - Learn about **Amazon Lightsail** and how it differs from EC2 <br> - **Practice:** <br>&emsp; + Launch Lightsail instance (Linux or WordPress) <br>&emsp; + Connect via SSH <br>&emsp; + Deploy static website <br>&emsp; + Explore pricing                                      | 09/23/2025 | 09/23/2025      | <https://lightsail.aws.amazon.com/> <https://www.youtube.com/watch?v=COK3ko4np-0&t=305s&pp=ygUNYXdzIGxpZ2h0c2FpbA%3D%3D> <https://000045.awsstudygroup.com/>                                                                                          |
+| 4   | - Learn about **Amazon EC2 Autoscaling** concepts (launch templates, scaling groups, policies) <br> - **Practice:** <br>&emsp; + Create Launch Template <br>&emsp; + Create Auto Scaling Group <br>&emsp; + Configure scaling policy <br>&emsp; + Stress test and observe scaling | 09/24/2025 | 09/24/2025      | <https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html> <https://000045.awsstudygroup.com/>                                                                                                                      |
+| 5   | - Weekly team meetup <br> - Start working on the main game prototype                                                                                                                                                                                                              | 09/25/2025 | 09/25/2025      |                                                                                                                                                                                                                                                       |
+| 6   | - Continue on building the first prototype                                                                                                                                                                                                                                        | 09/26/2025 | 09/26/2025      |                                                                                                                                                                                                                                                       |
 
+---
 
 ### Week 3 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Weekly meetup:
+  * Designed together the app's UI
+  * Come up with more business rules
+  * Decided which AWS service to use and costs
+* Project prototype building:
+  * Installed libraries: antd, socket.io, idv4...
+  * Dived-deep into game mechanics and logic
+  * Built simple UI
+  * Built basic game logic for the main game
+* Understood the differences between **managed database (RDS)** and self-managed EC2-hosted databases.
+* Deployed a working application on **Amazon Lightsail**, compared cost and use cases with EC2.
+* Successfully created an **EC2 Auto Scaling Group** with scaling policies that respond to load.
+* Gained hands-on skills with services beyond basic EC2, moving closer to production-grade AWS infrastructure.  
