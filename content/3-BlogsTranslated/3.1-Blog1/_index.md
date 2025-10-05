@@ -5,122 +5,81 @@ weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+# SportsCapital launches real-time event detection for sports trading powered by AWS
 
-# Getting Started with Healthcare Data Lakes: Using Microservices
+**By:** James Lockwood and Asim Jalis | **Date:** 03 JUN 2025
 
-Data lakes can help hospitals and healthcare facilities turn data into business insights, maintain business continuity, and protect patient privacy. A **data lake** is a centralized, managed, and secure repository to store all your data, both in its raw and processed forms for analysis. Data lakes allow you to break down data silos and combine different types of analytics to gain insights and make better business decisions.
+**Categories:** Amazon Bedrock, Amazon EC2, Amazon Machine Learning, Amazon RDS, Amazon SageMaker, Amazon Transcribe, Artificial Intelligence, AWS Lambda, Betting and Gaming, Compute, Database, Games, Industries, RDS for PostgreSQL
 
-This blog post is part of a larger series on getting started with setting up a healthcare data lake. In my final post of the series, *“Getting Started with Healthcare Data Lakes: Diving into Amazon Cognito”*, I focused on the specifics of using Amazon Cognito and Attribute Based Access Control (ABAC) to authenticate and authorize users in the healthcare data lake solution. In this blog, I detail how the solution evolved at a foundational level, including the design decisions I made and the additional features used. You can access the code samples for the solution in this Git repo for reference.
+*This blog was coauthored by Aaron Riccio, Co-Founder and CEO of SportsCapital, and Pravin Santhanam, CTO of SportsCapital.*
 
 ---
 
-## Architecture Guidance
+## The Challenge in Sports Trading
 
-The main change since the last presentation of the overall architecture is the decomposition of a single service into a set of smaller services to improve maintainability and flexibility. Integrating a large volume of diverse healthcare data often requires specialized connectors for each format; by keeping them encapsulated separately as microservices, we can add, remove, and modify each connector without affecting the others. The microservices are loosely coupled via publish/subscribe messaging centered in what I call the “pub/sub hub.”
+Sportsbooks rely on trading teams to manage odds and prevent sharp bettors from exploiting inefficiencies in their pricing. News events, such as reports of player injuries or lineup changes, introduce volatility that can shift the market at any moment and require traders to make adjustments in real time. Any delay in this process can expose sportsbooks to millions in liabilities.
 
-This solution represents what I would consider another reasonable sprint iteration from my last post. The scope is still limited to the ingestion and basic parsing of **HL7v2 messages** formatted in **Encoding Rules 7 (ER7)** through a REST interface.
+However, with live news and reporting inherently unstructured, efficiently detecting and programmatically using these events in a real-time environment isn't simple. The challenge is further compounded by the sheer volume of reporting that stems from thousands of local and national sources across all major leagues and college athletics.
 
-**The solution architecture is now as follows:**
+## SportsCapital's Solution
 
-> *Figure 1. Overall architecture; colored boxes represent distinct services.*
+SportsCapital's event detection system, built on top of Amazon Web Services (AWS) such as Amazon SageMaker and Amazon Bedrock, delivers an innovative solution. It uses cloud-based data processing pipelines and generative AI to turn real-time content into structured feeds for pricing models and trading applications. Top sportsbooks use the technology for real-time injury alerting and, more recently, it's been leveraged to build automated trading systems.
 
----
+> "Our alerts allow traders to be among the first to know about an injury event before the rest of the market reacts. We're now starting to see more investment from sportsbooks into trading automation, but it's only viable if you can effectively use these news reports to dynamically adjust your pricing and projections."
+>
+> — **Aaron Riccio, CEO of SportsCapital**
 
-While the term *microservices* has some inherent ambiguity, certain traits are common:  
-- Small, autonomous, loosely coupled  
-- Reusable, communicating through well-defined interfaces  
-- Specialized to do one thing well  
-- Often implemented in an **event-driven architecture**
+## The Cloud Advantage
 
-When determining where to draw boundaries between microservices, consider:  
-- **Intrinsic**: technology used, performance, reliability, scalability  
-- **Extrinsic**: dependent functionality, rate of change, reusability  
-- **Human**: team ownership, managing *cognitive load*
+SportsCapital's cloud-powered infrastructure enables real-time data processing for short and longform content online. It transforms live news from a broad range of media formats into enriched metadata, such as news classification, linked entities, and relevancy.
 
----
+> "Managed services from AWS are central to our architecture, providing the scalability and reliability needed to process thousands of news items each day while maintaining strict latency requirements. They provide an efficient solution to deliver our real-time services to clients."
+>
+> — **Pravin Santhanam, CTO of SportsCapital**
 
-## Technology Choices and Communication Scope
+![Image 1: Real-time event detection in SportsCapital’s system built on AWS.](/images/3-BlogsTranslated/SC-Image-1-1.png)
+**Image 1**: Real-time event detection in SportsCapital’s system built on AWS.
 
-| Communication scope                       | Technologies / patterns to consider                                                        |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Within a single microservice              | Amazon Simple Queue Service (Amazon SQS), AWS Step Functions                               |
-| Between microservices in a single service | AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS) |
-| Between services                          | Amazon EventBridge, AWS Cloud Map, Amazon API Gateway                                      |
+### System Architecture
 
----
+Using Amazon Elastic Cloud Compute (Amazon EC2) instances, SportsCapital's event detection system pipeline continuously monitors sources to detect relevant events. New data is stored in its database infrastructure through the MongoDB Atlas cloud developer data platform on Amazon EC2 and managed with Amazon Relational Database Service (Amazon RDS) for PostgreSQL.
 
-## The Pub/Sub Hub
+As new reports enter the system, database triggers initiate serverless processing through AWS Lambda. Lambda functions perform text clean up and entity linking, such as identifying the player, team, staff, or agent mentioned in the text.
 
-Using a **hub-and-spoke** architecture (or message broker) works well with a small number of tightly related microservices.  
-- Each microservice depends only on the *hub*  
-- Inter-microservice connections are limited to the contents of the published message  
-- Reduces the number of synchronous calls since pub/sub is a one-way asynchronous *push*
+Amazon SageMaker hosts machine learning (ML) models trained by SportsCapital to perform these enrichment tasks, allowing them to scale processing based on demand. Content triggers match algorithms that route relevant information to the appropriate destinations based on any custom filtering.
 
-Drawback: **coordination and monitoring** are needed to avoid microservices processing the wrong message.
+**The current latency**, or time-to-availability, from when a report is published to when it is fully processed averages about **seven seconds**.
 
----
+### Processing Longform Content
 
-## Core Microservice
+Longer form content requires additional processing, for which SportsCapital depends on large language models (LLMs) in Amazon Bedrock. These LLMs parse the content into multiple snippets with independent pieces of information. The pipeline also converts audio to text using speech-to-text technology from Amazon Transcribe. This segmentation allows them to maintain the same downstream processing pipeline regardless of the source.
 
-Provides foundational data and communication layer, including:  
-- **Amazon S3** bucket for data  
-- **Amazon DynamoDB** for data catalog  
-- **AWS Lambda** to write messages into the data lake and catalog  
-- **Amazon SNS** topic as the *hub*  
-- **Amazon S3** bucket for artifacts such as Lambda code
+## The Underlying AI Infrastructure
 
-> Only allow indirect write access to the data lake through a Lambda function → ensures consistency.
+Maintaining a competitive edge with AI requires the ability to rapidly innovate without infrastructure getting in the way. AWS helps reduce the need for custom infrastructure development at SportsCapital. At the same time, it provides the flexibility and low latency requirements needed to meet the company's real-time data processing needs.
 
----
+> "With Amazon SageMaker, we can bring in our own container images to implement custom inference pipelines. Comprehensive logging capabilities also provide critical visibility into system performance, helping us quickly identify and resolve any issues. Plus, the provisioned concurrency feature in Amazon SageMaker reduces our processing latency, which is huge in a business where every second counts."
+>
+> — **Pravin Santhanam, CTO of SportsCapital**
 
-## Front Door Microservice
+### Using Amazon Bedrock
 
-- Provides an API Gateway for external REST interaction  
-- Authentication & authorization based on **OIDC** via **Amazon Cognito**  
-- Self-managed *deduplication* mechanism using DynamoDB instead of SNS FIFO because:  
-  1. SNS deduplication TTL is only 5 minutes  
-  2. SNS FIFO requires SQS FIFO  
-  3. Ability to proactively notify the sender that the message is a duplicate  
+SportsCapital is also using Amazon Bedrock to experiment with foundation models, including LLMs like Anthropic's Claude Sonnet 3.5. The generative AI service provides the team with a unified API that makes foundation model integration more seamless. Built-in logging capabilities allow SportsCapital's team to create a consistent operational experience across its ML stack.
+
+Claude Sonnet 3.5 also plays a key role in enabling the pipeline to summarize longform content. SportsCapital built a training dataset to quantify the performance of this task and will continue to test new ones to improve evaluation metrics.
+
+> "Amazon Bedrock handles complex deployment infrastructure for LLMs in an invaluable way. We can incorporate advanced natural language processing [NLP] capabilities into our real-time workflows without worrying about the underlying infrastructure. This will remain crucial as our needs change, and we're excited about the potential to fine-tune custom LLMs through Amazon Bedrock as our pipeline evolves."
+>
+> — **Pravin Santhanam, CTO of SportsCapital**
+
+## Next Steps
+
+In the future, SportsCapital plans to scale the number of short- and long-form sources it ingests across a full calendar year of sports.
+
+> "Our team is focused on scaling ingestion across thousands of sources throughout the year and processing breaking news with a level of precision and speed this industry hasn't seen before."
+>
+> — **Aaron Riccio, CEO of SportsCapital**
 
 ---
 
-## Staging ER7 Microservice
-
-- Lambda “trigger” subscribed to the pub/sub hub, filtering messages by attribute  
-- Step Functions Express Workflow to convert ER7 → JSON  
-- Two Lambdas:  
-  1. Fix ER7 formatting (newline, carriage return)  
-  2. Parsing logic  
-- Result or error is pushed back into the pub/sub hub  
-
----
-
-## New Features in the Solution
-
-### 1. AWS CloudFormation Cross-Stack References
-Example *outputs* in the core microservice:
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
+Stay up to date with SportsCapital's latest developments, and reach out to an AWS representative to find out how generative AI services like Amazon SageMaker and Amazon Bedrock can enhance your AI projects.
