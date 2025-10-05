@@ -26,7 +26,6 @@ pre: " <b> 1.3. </b> "
 * Họp nhóm hàng tuần:
     * Thiết kế giao diện người dùng (UI) của ứng dụng cùng nhau
     * Đưa ra thêm các quy tắc nghiệp vụ (business rules)
-    * Thống nhất dịch vụ AWS sẽ sử dụng và ước tính chi phí
     * Thêm các chế độ trò chơi
 
 * Xây dựng nguyên mẫu dự án cho phần main game (project prototype):

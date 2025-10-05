@@ -28,12 +28,14 @@ pre: " <b> 1.3. </b> "
 * Weekly meetup:
   * Designed together the app's UI
   * Come up with more business rules
-  * Decided which AWS service to use and costs
+  * Design more game mode
 * Project prototype building:
   * Installed libraries: antd, socket.io, idv4...
   * Dived-deep into game mechanics and logic
   * Built simple UI
   * Built basic game logic for the main game
+    * Each word will have its own <input> field
+    * Press space to proceed to the next word
 * Understood the differences between **managed database (RDS)** and self-managed EC2-hosted databases.
 * Deployed a working application on **Amazon Lightsail**, compared cost and use cases with EC2.
 * Successfully created an **EC2 Auto Scaling Group** with scaling policies that respond to load.

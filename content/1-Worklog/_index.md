@@ -10,9 +10,9 @@ pre: " <b> 1. </b> "
 
 **Week 2:** [Getting familiar with basic AWS services: VPC, EC2, S3](1.2-week2/)
 
-**Week 3:** [Getting familiar with intermediate AWS services: RDS, Lightsail, EC2 auto Scaling, CloudWatch](1.3-week3/)
+**Week 3:** [Getting familiar with intermediate AWS services: RDS, Lightsail, EC2 auto Scaling, CloudWatch. Start building FCJ project](1.3-week3/)
 
-**Week 4:** [Doing task C...](1.4-week4/)
+**Week 4:** [Continue to learn AWS services: CloudWatch, Elasti Cache. Continue on building FCJ project](1.4-week4/)
 
 **Week 5:** [Doing task D...](1.5-week5/)
 

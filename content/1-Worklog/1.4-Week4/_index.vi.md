@@ -5,55 +5,63 @@ weight: 1
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 4:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Tiếp tục học thêm các dịch vụ của AWS
+* Tiếp tục xây dựng dự án FCJ
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc                                                                                                                                                 | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                                                                                                                                                                           |
+| --- |-----------------------------------------------------------------------------------------------------------------------------------------------------------| ------------ | --------------- |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 2   | - Tìm hiểu về AWS CloudWatch                                                                                                                              | 09/29/2025 | 09/29/2025      | <https://000008.awsstudygroup.com/1-introduction/> <https://docs.aws.amazon.com/cloudwatch/> <https://www.youtube.com/watch?v=ZCHwJLqPLj8> <https://www.youtube.com/watch?v=Yxl7e88cTAQ> 
+| 3   | - Tìm hiểu về AWS ElastiCache                                                                                                                             | 09/30/2025 | 09/30/2025      | <https://docs.aws.amazon.com/elasticache/> <https://redis.io/> <https://www.youtube.com/watch?v=jgpVdJB2sKQ>                                                                             |
+| 4   | - Tiếp tục phát triển dự án FCJ                                                                                                                           | 10/01/2025 | 10/01/2025      |                                                                                                                                                                                          |
+| 5   | - Tham gia sự kiện AWS: [AWS GenAI Builder Club] AI-Driven Development Life Cycle: Reimagining Software Engineering <br> - Tiếp tục phát triển dự án FCJ  | 10/02/2025 | 10/02/2025      |                                                                                                                                                                                          |
+| 6   | - Tiếp tục phát triển dự án FCJ                                                                                                                           | 10/03/2025 | 10/03/2025      |                                                                                                                                                                                          |
 
 
 ### Kết quả đạt được tuần 4:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* **Tìm hiểu về AWS CloudWatch**
+    * Chức năng của CloudWatch: Thu thập **metrics**, **logs** và **events** từ các tài nguyên AWS và ứng dụng.
+    * Khái niệm cốt lõi: **Metrics**, **Logs**, **Events**, **Dashboard**, **Alarms**, **CloudWatch Agent**
+    * Thực hành:
+        * Khởi tạo và theo dõi **metrics của EC2** (CPU, Memory, Network, Disk)
+        * Tạo **alarm** khi CPU EC2 > 70% và liên kết với **SNS topic** để nhận thông báo qua email
+        * Xem **log của EC2** trong CloudWatch Logs
+        * Truy vấn log bằng **Logs Insight**
+        * Thêm **widgets** hiển thị CPU Utilization, NetworkIn/Out vào **Dashboard**
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* **Tìm hiểu về AWS ElastiCache**
+    * Học về **khái niệm caching** trong các ứng dụng web
+    * Tìm hiểu về **Redis**
+    * Nắm các khái niệm chính trong ElastiCache: **nodes**, **clusters**, **shards**, **replication groups**
+    * Thực hành:
+        * Tạo **Redis Cluster** với **cluster mode disabled** trong VPC có EC2 instance
+        * Chạy ứng dụng **Node.js nhỏ** trên EC2 để kiểm tra cache và gọi API khi cache miss
+        * Giám sát bằng CloudWatch: xem các **metrics** như CPUUtilization, CurrConnections, Evictions
+        * **Replication group & failover:** tạo replication group với **multi-AZ** và 1 **replica per shard**
+        * Mô phỏng **failover** để quan sát node primary mới được kích hoạt
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* **Phát triển dự án FCJ**
+    * Hoàn thiện **logic trò chơi chính:**
+        * Thêm **chế độ luyện tập (singleplayer)**
+        * Thêm **dấu nháy của người chơi** với hoạt ảnh mượt khi di chuyển giữa các ký tự
+        * Thêm **màu chỉ báo** cho từng ký tự
+        * Thêm **thời lượng trò chơi**
+        * Xử lý logic khi người chơi gõ **quá số ký tự cuối từ**
+    * Giới thiệu **chế độ nhiều người chơi (multiplayer)** dựa trên **WebSocket**
+        * Thêm **khái niệm phòng (room):**
+            * Người chơi có thể **tạo phòng**, người khác **tham gia bằng roomId**
+        * Thêm **dấu nháy cho từng người chơi** hiển thị **tiến độ gõ theo thời gian thực**
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* **Tham gia sự kiện AWS**
+    * Tham gia **AWS GenAI Builder Club: AI-Driven Development Life Cycle: Reimagining Software Engineering**
+    * Học được các khái niệm về **AI trong phát triển phần mềm:**
+        * Cách **ứng dụng AI vào chu trình phát triển** để nâng cao chất lượng phần mềm
+        * **Tình hình hiện tại của AI** trong lĩnh vực phát triển phần mềm
+        * Hiểu về **AI-driven development**
+        * Làm quen với **Kiro IDE** thông qua các phần trình diễn demo
 
 

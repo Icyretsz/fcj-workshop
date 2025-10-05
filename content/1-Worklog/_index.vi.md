@@ -12,7 +12,7 @@ pre: " <b> 1. </b> "
 
 **Tuần 3:** [Tìm hiểu và thực hành với các dịch vụ intermediate: RDS, Lightsail, tự động scale với EC2, Cloudwatch](1.3-week3/)
 
-**Tuần 4:** [Làm công việc C...](1.4-week4/)
+**Tuần 4:** [Tiếp tục tìm hiểu thêm các dịch vụ của AWS: CloudWatch, Elasti Cache. Tiếp tục xây dựng dự án FCJ](1.4-week4/)
 
 **Tuần 5:** [Làm công việc D...](1.5-week5/)
 
