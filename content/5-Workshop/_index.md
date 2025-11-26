@@ -5,27 +5,144 @@ weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# Secure Hybrid Access to S3 using VPC Endpoints
+# Building and Deploying Serverless Applications on AWS
 
-#### Overview
+## Workshop Series Overview
 
-**AWS PrivateLink** provides private connectivity to AWS services from VPCs and your on-premises networks, without exposing your traffic to the Public Internet.
+Welcome to this comprehensive hands-on workshop series on building and deploying production-ready serverless applications on AWS. Over the course of three workshops, you'll learn how to architect, secure, and automate the deployment of a modern web application using AWS's serverless services.
 
-In this lab, you will learn how to create, configure, and test VPC endpoints that enable your workloads to reach AWS services without traversing the Public Internet.
+## What You'll Build
 
-You will create two types of endpoints to access Amazon S3: a Gateway VPC endpoint, and an Interface VPC endpoint. These two types of VPC endpoints offer different benefits depending on if you are accessing Amazon S3 from the cloud or your on-premises location
-+ **Gateway** - Create a gateway endpoint to send traffic to Amazon S3 or DynamoDB using private IP addresses.You route traffic from your VPC to the gateway endpoint using route tables.
-+ **Interface** - Create an interface endpoint to send traffic to endpoint services that use a Network Load Balancer to distribute traffic. Traffic destined for the endpoint service is resolved using DNS.
+By the end of this series, you'll have built a complete serverless application featuring:
+
+- **Secure Frontend**: A globally distributed, high-performance static website protected by AWS WAF
+- **Scalable Backend**: RESTful APIs powered by Lambda functions with secure database access
+- **User Authentication**: Complete user management with sign-up, login, and authorization
+- **Automated Deployment**: A full CI/CD pipeline that automatically builds and deploys your application
+
+## Workshop Structure
+
+### Workshop 1: Frontend Deployment with CloudFront, WAF, and S3
+Learn to deploy and secure a static frontend application using AWS's content delivery network. You'll configure CloudFront for global distribution, implement S3 for reliable storage, and protect your application with AWS WAF rules.
+
+**Key Topics:**
+- S3 bucket configuration for static website hosting
+- CloudFront distribution setup and optimization
+- AWS WAF rule configuration for security
+- Custom domain and SSL certificate management
+
+### Workshop 2: Backend Deployment with API Gateway, Lambda, and RDS
+Build a secure, scalable backend infrastructure. You'll create RESTful APIs, implement serverless functions, set up a managed database, and integrate user authentication.
+
+**Key Topics:**
+- API Gateway REST API design and deployment
+- Lambda function development and configuration
+- RDS database setup and connection management
+- AWS Secrets Manager for credential security
+- Amazon Cognito for authentication and authorization
+- Securing APIs with Cognito authorizers
+
+### Workshop 3: CI/CD Pipeline with AWS Developer Tools
+Automate your deployment process from code commit to production. You'll build a complete continuous integration and deployment pipeline using AWS native tools.
+
+**Key Topics:**
+- CodeCommit repository setup and branching strategies
+- CodeBuild project configuration and build specifications
+- CodeDeploy deployment strategies
+- Pipeline orchestration and automation
+- Environment management and testing stages
+
+## Prerequisites
+
+**Required Knowledge:**
+- Basic understanding of web application architecture
+- Familiarity with JavaScript/Node.js or Python
+- Basic command line/terminal usage
+- Understanding of HTTP and REST APIs
+
+**Required Tools:**
+- AWS Account with administrative access
+- AWS CLI installed and configured
+- Text editor or IDE (VS Code recommended)
+- Git installed locally
+
+**Recommended:**
+- Basic understanding of SQL
+- Familiarity with JSON
+- Experience with version control (Git)
+
+## Architecture Overview
+
+The application follows AWS Well-Architected Framework principles:
+```
+┌─────────────┐
+│   Users     │
+└──────┬──────┘
+       │
+       ▼
+┌─────────────────┐
+│   CloudFront    │ ◄── WAF Protection
+│   + WAF         │
+└────────┬────────┘
+         │
+    ┌────┴────┐
+    ▼         ▼
+┌───────┐  ┌──────────────┐
+│  S3   │  │ API Gateway  │ ◄── Cognito Authorizer
+└───────┘  └──────┬───────┘
+                  │
+                  ▼
+           ┌──────────────┐
+           │   Lambda     │
+           └──────┬───────┘
+                  │
+           ┌──────┴───────┐
+           ▼              ▼
+      ┌────────┐    ┌──────────┐
+      │  RDS   │    │  Cognito │
+      └────────┘    └──────────┘
+           ▲
+           │
+      ┌────────────────┐
+      │ Secrets Manager│
+      └────────────────┘
+```
+
+## Learning Outcomes
+
+By completing this workshop series, you will be able to:
+
+- Design and implement serverless architectures on AWS
+- Secure web applications using industry best practices
+- Implement user authentication and authorization flows
+- Manage application secrets and database credentials securely
+- Build and maintain automated deployment pipelines
+- Optimize applications for performance and cost
+- Troubleshoot common serverless deployment issues
+
+## Cost Considerations
+
+This workshop uses AWS services that may incur costs. We'll use AWS Free Tier eligible services where possible, but you should:
+
+- Monitor your AWS billing dashboard regularly
+- Delete resources after completing each workshop if not continuing immediately
+- Set up billing alerts to avoid unexpected charges
+
+Estimated cost for completing all workshops: $5-$15 (assuming no existing Free Tier usage)
+
+## Getting Help
+
+Throughout the workshops, you'll find:
+- Step-by-step instructions with screenshots
+- Code samples and configuration templates
+- Common troubleshooting tips
+- Links to AWS documentation for deeper dives
+
+## Ready to Start?
+
+Let's begin with Workshop 1 and build the foundation of your serverless application!
 
 #### Content
 
-1. [Workshop overview](5.1-Workshop-overview)
-2. [Prerequiste](5.2-Prerequiste/)
-3. [Access S3 from VPC](5.3-S3-vpc/)
-4. [Access S3 from On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (Bonus)](5.5-Policy/)
-6. [Clean up](5.6-Cleanup/)
+1. [Workshop 1: Frontend Deployment with CloudFront, WAF, and S3](5.1-Frontend-deployment)
