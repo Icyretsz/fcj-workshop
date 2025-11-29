@@ -35,6 +35,19 @@ In this section, you'll configure AWS WAF (Web Application Firewall) to protect 
 - Pay only for what you use
 - No infrastructure to manage
 
+## Costs Considerations
+### Free-tier:
+- $0/month
+
+### Paid-tier
+| Resource Type | Price                                   |
+|----------------|------------------------------------------|
+| Web ACL        | $5.00 per month (prorated hourly)        |
+| Rule           | $1.00 per month (prorated hourly)        |
+| Request        | $0.60 per 1 million requests             |
+- Overall: $0 or < $1 if Paid-tier (assume immediate clean up after workshop)
+
+
 ## Understanding WAF Concepts
 
 ### Web ACL (Access Control List)
@@ -277,7 +290,9 @@ For simpler testing without scripts:
 ## Step 9: Create CloudWatch Alarms (Optional)
 
 {{% notice note %}}
-To follow this section, you must upgrade your CloudFront to Pro-tier
+To follow this section, you must upgrade your CloudFront to Pro-tier. You will be charged $15/month in Pro-tier and
+you can only switch back to free-tier after 5 days. Furthermore, you can only delete your Pro-tier distribution after
+the first billing cycle
 {{% /notice %}}
 
 ### 9.1 Enable logging destination in WAF
@@ -290,7 +305,7 @@ configure logging
 3. On the next screen, under **Logging**, click **Enable**, then select **Logging destination**
 4. On the sidebar that appeared, under **Amazon Cloudwatch Logs log group**, you can use existing log groups and create a new one. We will create and use a log group called `aws-waf-logs-workshop1`, then click **Create**
 ![Create log group](/images/5-Workshop/5.1-Frontend-deployment/5.1.4-WAF/18.png)
-5. Back to **Logging destination sidebar, select you newly-created log groups
+5. Back to **Logging destination sidebar**, select you newly-created log groups
 5. Then click **Save**
 ![Create log group](/images/5-Workshop/5.1-Frontend-deployment/5.1.4-WAF/19.png)
 

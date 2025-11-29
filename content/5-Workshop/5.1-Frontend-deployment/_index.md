@@ -1,5 +1,5 @@
 ---
-title : "Workshop 1: Frontend Deployment with CloudFront, WAF, and S3"
+title : "Frontend Deployment with CloudFront, WAF, and S3"
 date :  "2025-09-15" 
 weight : 1 
 chapter : false
@@ -11,6 +11,8 @@ pre : " <b> 5.1. </b> "
 Welcome to the first workshop in our serverless application series! In this hands-on session, you'll learn how to deploy a secure, high-performance static website using AWS's content delivery and storage services.
 
 Modern web applications require fast, reliable, and secure content delivery to users worldwide. In this workshop, you'll build the frontend infrastructure that forms the foundation of a production-ready serverless application. You'll configure Amazon S3 to host your static website files, set up Amazon CloudFront to distribute your content globally with low latency, and implement AWS WAF (Web Application Firewall) to protect your application from common web exploits.
+
+![Diagram]( /images/5-Workshop/5.1-Frontend-deployment/5.1/diagram.png)
 
 ### What You'll Build
 
@@ -54,13 +56,7 @@ This workshop is divided into the following sections:
     - Associate WAF with CloudFront
     - Test security rules
 
-4. **Part 4: Testing and Validation**
-    - Verify website accessibility
-    - Test security rules
-    - Performance testing
-    - Troubleshooting common issues
-
-5. **Part 5: Cleanup** (Optional)
+4. **Part 4: Cleanup** (Optional)
     - Remove resources to avoid charges
     - Save configuration for future use
 

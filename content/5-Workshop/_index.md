@@ -6,11 +6,11 @@ chapter: false
 pre: " <b> 5. </b> "
 ---
 
-# Building and Deploying Serverless Applications on AWS
+# Building and Deploying Fullstack Serverless Applications on AWS
 
-## Workshop Series Overview
+## Workshop Overview
 
-Welcome to this comprehensive hands-on workshop series on building and deploying production-ready serverless applications on AWS. Over the course of three workshops, you'll learn how to architect, secure, and automate the deployment of a modern web application using AWS's serverless services.
+Welcome to this comprehensive hands-on workshop on building and deploying production-ready fullstack serverless applications on AWS. Over the course of three parts, you'll learn how to architect, secure, and automate the deployment of a modern web application using AWS's serverless services.
 
 ## What You'll Build
 
@@ -23,7 +23,7 @@ By the end of this series, you'll have built a complete serverless application f
 
 ## Workshop Structure
 
-### Workshop 1: Frontend Deployment with CloudFront, WAF, and S3
+### Part 1: Frontend Deployment with CloudFront, WAF, and S3
 Learn to deploy and secure a static frontend application using AWS's content delivery network. You'll configure CloudFront for global distribution, implement S3 for reliable storage, and protect your application with AWS WAF rules.
 
 **Key Topics:**
@@ -32,7 +32,7 @@ Learn to deploy and secure a static frontend application using AWS's content del
 - AWS WAF rule configuration for security
 - Custom domain and SSL certificate management
 
-### Workshop 2: Backend Deployment with API Gateway, Lambda, and RDS
+### Part 2: Backend Deployment with API Gateway, Lambda, and RDS
 Build a secure, scalable backend infrastructure. You'll create RESTful APIs, implement serverless functions, set up a managed database, and integrate user authentication.
 
 **Key Topics:**
@@ -43,7 +43,7 @@ Build a secure, scalable backend infrastructure. You'll create RESTful APIs, imp
 - Amazon Cognito for authentication and authorization
 - Securing APIs with Cognito authorizers
 
-### Workshop 3: CI/CD Pipeline with AWS Developer Tools
+### Part 3: CI/CD Pipeline with AWS Developer Tools
 Automate your deployment process from code commit to production. You'll build a complete continuous integration and deployment pipeline using AWS native tools.
 
 **Key Topics:**

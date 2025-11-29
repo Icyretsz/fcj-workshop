@@ -29,6 +29,14 @@ In this section, you'll configure Amazon CloudFront as a Content Delivery Networ
 - **Scalability**: Handles traffic spikes automatically
 - **Custom Domains**: Use your own domain name with SSL certificate
 
+## Costs Considerations
+### Free-tier:
+- $0/month
+
+### Paid-tier
+1. $15/month
+4. Overall: <$0 or <$1 if Pro (clean up immediately after finish workshop)
+
 ## Step 1: Create CloudFront Distribution
 
 ### 1.1 Navigate to CloudFront Console

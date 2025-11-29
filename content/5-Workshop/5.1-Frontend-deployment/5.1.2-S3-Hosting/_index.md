@@ -20,6 +20,14 @@ In this section, you'll set up Amazon S3 to host your static website. S3 (Simple
 
 **Estimated time**: 30 minutes
 
+## Costs Considerations
+### Free-tier:
+- S3 does not have free-tier benefits
+
+### Paid-tier
+1. Even paid tier cost is minimal for our workshop
+4. Overall: <$0 (clean up immediately after finish workshop)
+
 ## Step 1: Prepare Your Application
 
 ### 1.1 Clone the Sample Repository
