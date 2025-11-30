@@ -60,16 +60,18 @@ RDS PostgreSQL (execute queries)
 ## Step 1: Prepare Lambda Development Environment (optional)
 
 In this step, you'll set up a local development environment for building and packaging your Lambda function.
-However, this step is optional. If you prefer not to set up the environment manually, you can skip ahead to Step 3, where a pre-packaged ZIP file will be provided for download.
+However, this step is optional. If you prefer not to set up the environment manually, you can skip this step and download source code below.
+You can download source code for this part here:
+- Github repository: https://github.com/Icyretsz/fcj-workshop-serverless-backend-ver1
+- Only the zip file for lambda: https://fcj-workshop-files.s3.ap-southeast-1.amazonaws.com/userHandler.zip
 
 ### 1.1 View Project Directory
 
-The source code is provided in the same git repository you pulled in [5.1.2 S3 Hosting]({{< relref "/5-Workshop/5.1-Frontend-deployment/5.1.2-S3-Hosting" >}}#11-clone-the-sample-repository)
+The source code is provided in the above git repository
 
 The project structure:
 ```
-fcj-serverless-workshop
-├── frontend
+fcj-workshop-serverless-backend-ver1
 └── backend/
     └── src/
         └── userHandler.ts
@@ -114,21 +116,15 @@ npm install
 
 ### 2.1 Build TypeScript Code
 
-Change directory to backend folder:
-
-```bash
-cd backend
-```
-
 Build
 ```bash
 npm run build
 ```
 
-This creates `dist` folder in `backend` directory
+This creates `dist` folder in root directory
 
-Now go to the root directory `/fcj-serverless-workshop` find `node_modules` folder then copy it to
-`backend/dist` folder
+Now find `node_modules` folder then copy it to
+`dist` folder
 
 When complete, select all files in `dist` folder, compress them to **zip** and name it userHandler
 

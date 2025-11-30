@@ -313,6 +313,21 @@ Your API structure should now look like:
 
 ![API Gateway Complete Structure](/images/5-Workshop/5.2-Serverless/5.2.6-API-Gateway/10.png)
 
+### 2.9 Enable CORS on each resources
+1. Click **/users** resource
+2. Click **Enable CORS**
+3. Select the methods: GET, POST
+4. **Access-Control-Allow-Origin**: input your CloudFront endpoint to restrict origin, or `*` for debug
+5. Click **Save**
+
+![API Gateway Complete Structure](/images/5-Workshop/5.2-Serverless/5.2.6-API-Gateway/26.png)
+
+6. Do the same for **/{id}** resource (methods: GET, PUT, DELETE)
+7. After enabling CORS for those two resources, you will see OPTION method in each resource
+8. Click on OPTION method, go to **Integration response** to see the details
+
+![API Gateway Complete Structure](/images/5-Workshop/5.2-Serverless/5.2.6-API-Gateway/27.png)
+
 ## Step 3: Deploy API
 
 APIs must be deployed to a stage before they're accessible.

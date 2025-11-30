@@ -34,7 +34,7 @@ In this section, you'll set up Amazon S3 to host your static website. S3 (Simple
 
 Open your terminal or command prompt and run:
 ```bash
-git clone https://github.com/Icyretsz/fcj-serverless-workshop.git
+git clone https://github.com/Icyretsz/fcj-workshop-serverless-frontend.git
 ```
 
 ### 1.2 Install Dependencies
@@ -51,9 +51,8 @@ npm install
 
 ### 1.3 Build the Application
 
-Navigate to the frontend directory and build the production-ready version:
+Navigate to the root directory and build the production-ready version:
 ```bash
-cd frontend
 npm run build
 ```
 
