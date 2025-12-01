@@ -816,6 +816,9 @@ You can download fully working source code that includes the above changes here:
 - Github repository: https://github.com/Icyretsz/fcj-workshop-serverless-backend-ver2
 - Only the zip file for lambda: https://fcj-workshop-files.s3.ap-southeast-1.amazonaws.com/userHandler-final.zip
 - Note that this repo is different from the repo in 5.2.5
+- After upload the zip to Lambda, you should find the response function and modify Access-Control-Allow-Origin from `*` to your CloudFront endpoint to only allow requests from your CloudFront
+
+![Cognito singout url](/images/5-Workshop/5.2-Serverless/5.2.7-Cognito/36.png)
 
 ## Summary
 
