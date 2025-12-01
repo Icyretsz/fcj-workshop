@@ -1,7 +1,7 @@
 ---
-title : "Part 3: AWS WAF Configuration"
+title : "AWS WAF Configuration"
 date :  "2025-09-15" 
-weight : 1 
+weight : 4
 chapter : false
 pre : " <b> 5.1.4 </b> "
 ---
@@ -109,13 +109,13 @@ You'll see:
 ### 2.1 View the Web ACL created by CloudFront
 
 1. In the left navigation, click **Protection packs (web ACLs)**
-2. You can see a Web ACL created by CloudFront that you set up in [Part 2]({{< relref "/5-Workshop/5.1-Frontend-deployment/5.1.3-Cloudfront-setup" >}}#15-step-4-enable-security)
+2. You can see a Web ACL created by CloudFront that you set up in [Cloudfront Distribution Setup]({{< relref "/5-Workshop/5.1-Frontend-deployment/5.1.3-Cloudfront-setup" >}}#15-step-4-enable-security)
 
 ![WAF Web ACL](/images/5-Workshop/5.1-Frontend-deployment/5.1.4-WAF/2.png)
 
 {{% notice note %}}
 This WAF configuration is included as part of the CloudFront pricing Free plan for the distribution we
-created in Part 2
+created in Cloudfront Distribution Setup
 {{% /notice %}}
 
 3. Click the Web ACL name to open a sidebar to view actions

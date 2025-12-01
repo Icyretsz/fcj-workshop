@@ -1,7 +1,7 @@
 ---
 title : "Frontend Integration"
 date :  "2025-09-15" 
-weight : 1 
+weight : 8 
 chapter : false
 pre : " <b> 5.2.8 </b> "
 ---

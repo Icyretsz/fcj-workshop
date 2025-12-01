@@ -43,16 +43,6 @@ Build a secure, scalable backend infrastructure. You'll create RESTful APIs, imp
 - Amazon Cognito for authentication and authorization
 - Securing APIs with Cognito authorizers
 
-### Part 3: CI/CD Pipeline with AWS Developer Tools
-Automate your deployment process from code commit to production. You'll build a complete continuous integration and deployment pipeline using AWS native tools.
-
-**Key Topics:**
-- CodeCommit repository setup and branching strategies
-- CodeBuild project configuration and build specifications
-- CodeDeploy deployment strategies
-- Pipeline orchestration and automation
-- Environment management and testing stages
-
 ## Prerequisites
 
 **Required Knowledge:**
@@ -74,40 +64,7 @@ Automate your deployment process from code commit to production. You'll build a 
 
 ## Architecture Overview
 
-The application follows AWS Well-Architected Framework principles:
-```
-┌─────────────┐
-│   Users     │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────────┐
-│   CloudFront    │ ◄── WAF Protection
-│   + WAF         │
-└────────┬────────┘
-         │
-    ┌────┴────┐
-    ▼         ▼
-┌───────┐  ┌──────────────┐
-│  S3   │  │ API Gateway  │ ◄── Cognito Authorizer
-└───────┘  └──────┬───────┘
-                  │
-                  ▼
-           ┌──────────────┐
-           │   Lambda     │
-           └──────┬───────┘
-                  │
-           ┌──────┴───────┐
-           ▼              ▼
-      ┌────────┐    ┌──────────┐
-      │  RDS   │    │  Cognito │
-      └────────┘    └──────────┘
-           ▲
-           │
-      ┌────────────────┐
-      │ Secrets Manager│
-      └────────────────┘
-```
+![Diagram]( /images/5-Workshop/diagram.png)
 
 ## Learning Outcomes
 
@@ -146,3 +103,4 @@ Let's begin with Part 1: Frontend Deployment and build the foundation of your se
 #### Content
 
 1. [Part 1: Frontend Deployment: Frontend Deployment with CloudFront, WAF, and S3](5.1-Frontend-deployment)
+1. [Part 2: Serverless Backend: Backend Deployment with API Gateway, Lambda, RDS, and Cognito](5.2-Serverless-backend)

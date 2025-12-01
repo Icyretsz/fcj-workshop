@@ -1,5 +1,5 @@
 ---
-title : "Frontend Deployment with CloudFront, WAF, and S3"
+title : "Part 1: Frontend Deployment with CloudFront, WAF, and S3"
 date :  "2025-09-15" 
 weight : 1 
 chapter : false

@@ -1,7 +1,7 @@
 ---
-title: "Backend Deployment with API Gateway, Lambda, RDS, and Cognito"
+title: "Part 2: Backend Deployment with API Gateway, Lambda, RDS, and Cognito"
 date: "2025-09-15"
-weight: 5
+weight: 2
 chapter: false
 pre: " <b> 5.2 </b> "
 ---
@@ -14,7 +14,7 @@ You will then learn how to connect our serverless backend to frontend that we pr
 
 Modern applications require robust, scalable backend systems that can handle business logic, manage data securely, and authenticate users. In this workshop, you'll create a fully serverless backend architecture using AWS Lambda for compute, Amazon RDS for data persistence, API Gateway for RESTful APIs, Amazon Cognito for user authentication, and AWS Secrets Manager for secure credential management.
 
-![Diagram]( /images/5-Workshop/5.2-Serverless/5.2/diagram.png)
+![Diagram]( /images/5-Workshop/diagram.png)
 
 ### What You'll Build
 

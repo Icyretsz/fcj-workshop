@@ -1,7 +1,7 @@
 ---
-title : "Part 2: CloudFront Distribution Setup"
+title : "CloudFront Distribution Setup"
 date :  "2025-09-15" 
-weight : 1 
+weight : 3 
 chapter : false
 pre : " <b> 5.1.3 </b> "
 ---
@@ -74,7 +74,7 @@ In this section, you'll configure Amazon CloudFront as a Content Delivery Networ
 
 **Origin:**
 1. Click on the **Browse S3** button
-2. On the appeared modal, select the S3 bucket you created earlier in Part 1. Then click **Choose**
+2. On the appeared modal, select the S3 bucket you created earlier in S3 Static Website Hosting tutorial. Then click **Choose**
 
 ![S3 origin]( /images/5-Workshop/5.1-Frontend-deployment/5.1.3-Cloudfront-setup/4.png)
 
@@ -84,7 +84,7 @@ In this section, you'll configure Amazon CloudFront as a Content Delivery Networ
 
 {{% notice note %}}
 **Understanding the Warning**:<br>
-In [Part 1]({{< relref "/5-Workshop/5.1-Frontend-deployment/5.1.2-S3-Hosting" >}}#23-configure-bucket-settings),
+In [S3 Static Website Hosting]({{< relref "/5-Workshop/5.1-Frontend-deployment/5.1.2-S3-Hosting" >}}#23-configure-bucket-settings),
 we configured the bucket for public access to enable **S3 static website hosting**. CloudFront has detected this
 configuration. That is why when you click the **Use website endpoint**, the URL in the textbox will appear in this
 format: `[your-bucket-name].s3-website-[region].amazonaws.com`, this is called the **S3 website endpoint**.<br>
@@ -173,7 +173,7 @@ CloudFront to access our S3 Bucket
 
 3. We should now remove
    the **PublicReadGetObject** permission we created in
-[Part 1]({{< relref "/5-Workshop/5.1-Frontend-deployment/5.1.2-S3-Hosting" >}}#52-add-policy-json)
+[S3 Static Website Hosting]({{< relref "/5-Workshop/5.1-Frontend-deployment/5.1.2-S3-Hosting" >}}#52-add-policy-json)
 
 2. Click **Edit**
 3. Delete this statement:
@@ -202,7 +202,7 @@ CloudFront to access our S3 Bucket
 ![Disable S3 website hosting]( /images/5-Workshop/5.1-Frontend-deployment/5.1.3-Cloudfront-setup/12.png)
 
 With this change, we will no longer be able to access our website via **S3 website endpoint** in
-[Part 1]({{< relref "/5-Workshop/5.1-Frontend-deployment/5.1.2-S3-Hosting" >}}#33-view-website-endpoint)
+[S3 Static Website Hosting]({{< relref "/5-Workshop/5.1-Frontend-deployment/5.1.2-S3-Hosting" >}}#33-view-website-endpoint)
 
 ### Step 3: View CloudFront Origin Settings (Optional)
 
@@ -224,7 +224,7 @@ If you want, you can view CloudFront's origin settings to better understand how 
 {{% notice note %}}
 You may also see the message *"You must allow access to CloudFront using this policy statement. 
 Learn more about giving CloudFront permission to access the S3 bucket"*. This message means that you must add
-required policy statements in your S3 Bucket for CloudFront to access the S3 bucket you created in Part 1 to host the
+required policy statements in your S3 Bucket for CloudFront to access the S3 bucket you created in S3 Static Website Hosting tutorial to host the
 sample website. But as of 26/11/2025, in the CloudFront creation process, particularly [1.4 Step 3: Specify origin](#14-step-3-specify-origin),
 we selected **Allow private S3 bucket access to CloudFront - Recommended**. This option will automatically insert required
 policy statements for CloudFront to access the S3 bucket, as we 

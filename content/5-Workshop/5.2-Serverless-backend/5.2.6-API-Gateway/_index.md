@@ -1,7 +1,7 @@
 ---
 title : "API Gateway Setup"
 date :  "2025-09-15" 
-weight : 1 
+weight : 6 
 chapter : false
 pre : " <b> 5.2.6 </b> "
 ---

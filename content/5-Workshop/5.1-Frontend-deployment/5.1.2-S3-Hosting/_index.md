@@ -1,7 +1,7 @@
 ---
-title : "Part 1: S3 Static Website Hosting"
+title : "S3 Static Website Hosting"
 date :  "2025-09-15" 
-weight : 1 
+weight : 2 
 chapter : false
 pre : " <b> 5.1.2 </b> "
 ---

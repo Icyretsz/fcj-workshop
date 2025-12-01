@@ -1,7 +1,7 @@
 ---
 title : "Amazon Cognito Configuration"
 date :  "2025-09-15" 
-weight : 1 
+weight : 7 
 chapter : false
 pre : " <b> 5.2.7 </b> "
 ---

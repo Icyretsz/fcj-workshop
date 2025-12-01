@@ -1,7 +1,7 @@
 ---
 title : "Clean up"
 date :  "2025-09-15" 
-weight : 1 
+weight : 9 
 chapter : false
 pre : " <b> 5.2.9 </b> "
 ---

@@ -1,7 +1,7 @@
 ---
 title : "RDS Database Setup"
 date :  "2025-09-15" 
-weight : 1 
+weight : 3 
 chapter : false
 pre : " <b> 5.2.3 </b> "
 ---
