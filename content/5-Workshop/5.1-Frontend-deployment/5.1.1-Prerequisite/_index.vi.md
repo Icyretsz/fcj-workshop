@@ -69,7 +69,7 @@ Nếu bạn muốn sử dụng custom domain (ví dụ: `www.yoursite.com`):
 - **DNS Access**: Khả năng sửa đổi các bản ghi DNS cho tên miền của bạn
 - **Lưu ý**: Đây là tùy chọn; bạn có thể hoàn thành workshop bằng cách sử dụng tên miền mặc định của CloudFront
 
-### Dự kiến chi phí cho Workshop 1
+### Dự kiến chi phí cho Part 1: Frontend Deployment
 
 **Các dịch vụ đủ điều kiện Free Tier:**
 - **S3**: 5GB lưu trữ, 20,000 GET requests, 2,000 PUT requests (12 tháng đầu)

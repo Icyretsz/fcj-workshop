@@ -8,7 +8,7 @@ pre : " <b> 5.2.1 </b> "
 
 ### Required AWS Knowledge
 
-- **Workshop 1 Completion**: Understanding of AWS console navigation and basic services; Having a frontend application ready to connect
+- **Part 1: Frontend Deployment Completion**: Understanding of AWS console navigation and basic services; Having a frontend application ready to connect
 - **HTTP/REST APIs**: Knowledge of HTTP methods (GET, POST, PUT, DELETE) and REST principles
 - **Database Basics**: Understanding of relational databases, tables, and SQL queries
 - **JSON**: Familiarity with JSON format for API requests/responses
@@ -110,13 +110,13 @@ cd serverless-app-backend
 - We'll provide all code snippets in the tutorial
 - Good for learning and understanding each component
 
-### Optional: Completed Workshop 1
+### Optional: Completed Part 1: Frontend Deployment
 
-While not strictly required, having completed Workshop 1 provides context:
+While not strictly required, having completed Part 1: Frontend Deployment provides context:
 - You'll understand how the frontend will consume these APIs
 - You'll have a complete end-to-end application
 
-**If you skipped Workshop 1:**
+**If you skipped Part 1: Frontend Deployment:**
 - You can still complete this workshop independently
 - We'll test APIs using Postman instead of the frontend
 - You can integrate with any frontend later
@@ -176,7 +176,7 @@ By the end of this workshop, you'll have:
 - Database-backed data persistence
 - Professional logging and monitoring
 - Production-ready security practices
-- A backend that integrates with your Workshop 1 frontend (if completed)
+- A backend that integrates with your Part 1: Frontend Deployment frontend (if completed)
 
 ### Next Step
 

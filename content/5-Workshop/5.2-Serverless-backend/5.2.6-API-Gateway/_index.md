@@ -139,7 +139,7 @@ You'll see several API types:
 **Regional**: Deployed in a single region, recommended for most use cases<br>
 **Edge Optimized**: Automatically distributed via CloudFront (adds latency for regional traffic)<br>
 **Private**: Only accessible within VPC<br>
-For this workshop, **Regional** is best. You already have CloudFront from Workshop 1 if you want global distribution.
+For this workshop, **Regional** is best. You already have CloudFront from Part 1: Frontend Deployment if you want global distribution.
 {{% /notice %}}
 
 6. **Security policy**

@@ -63,3 +63,8 @@ function respond(statusCode, payload) {
 4. Upon succesful login, you will be redirected to the homepage.
 5. The homepage will display your information and tokens, along with the user list fetched from RDS
 
+![homepage](/images/5-Workshop/5.2-Serverless/5.2.8-Frontend-integration/4.png)
+
+6. You can test CRUD operations
+
+## This concludes our workshop

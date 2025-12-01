@@ -106,7 +106,7 @@ This workshop is divided into the following sections:
 - Test authenticated endpoints with tokens
 - Verify database operations
 - Test error handling
-- (Optional) Integrate with Workshop 1 frontend
+- (Optional) Integrate with Part 1: Frontend Deployment frontend
 
 ### **Part 9: Monitoring and Logging**
 - View Lambda CloudWatch Logs

@@ -69,7 +69,7 @@ If you want to use a custom domain (e.g., `www.yoursite.com`):
 - **DNS Access**: Ability to modify DNS records for your domain
 - **Note**: This is optional; you can complete the workshop using CloudFront's default domain
 
-### Cost Expectations for Workshop 1
+### Cost Expectations for Part 1: Frontend Deployment
 
 **Free Tier Eligible Services:**
 - **S3**: 5GB storage, 20,000 GET requests, 2,000 PUT requests (first 12 months)

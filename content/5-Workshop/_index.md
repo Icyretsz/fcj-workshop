@@ -141,8 +141,8 @@ Throughout the workshops, you'll find:
 
 ## Ready to Start?
 
-Let's begin with Workshop 1 and build the foundation of your serverless application!
+Let's begin with Part 1: Frontend Deployment and build the foundation of your serverless application!
 
 #### Content
 
-1. [Workshop 1: Frontend Deployment with CloudFront, WAF, and S3](5.1-Frontend-deployment)
+1. [Part 1: Frontend Deployment: Frontend Deployment with CloudFront, WAF, and S3](5.1-Frontend-deployment)

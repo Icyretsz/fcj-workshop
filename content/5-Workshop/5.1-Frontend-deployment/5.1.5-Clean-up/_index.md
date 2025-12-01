@@ -8,7 +8,7 @@ pre : " <b> 5.1.5 </b> "
 
 ## Overview
 
-This section covers how to properly clean up the resources you created during Workshop 1. Cleaning up is important to avoid ongoing AWS charges, especially for resources that have monthly costs like WAF Web ACLs.
+This section covers how to properly clean up the resources you created during frontend deployment. Cleaning up is important to avoid ongoing AWS charges, especially for resources that have monthly costs like WAF Web ACLs.
 
 **What you'll learn:**
 - How to safely delete resources in the correct order
@@ -22,7 +22,7 @@ This section covers how to properly clean up the resources you created during Wo
 ## Should You Clean Up?
 
 ### Keep Resources If:
-- ✅ You're proceeding immediately to Workshop 2
+- ✅ You're proceeding immediately to Part 2: Serverless Backend
 - ✅ You want to maintain the working frontend for reference
 - ✅ You're using this for a real project
 - ✅ Costs are acceptable for your use case
@@ -170,14 +170,14 @@ Only if you created CloudWatch alarms in the optional section.
 
 ### What's Next?
 
-If continuing to Workshop 2:
+If continuing to Part 2: Serverless backend:
 - Keep existing resources OR
 - Proceed with backend deployment
 - Backend will integrate with this frontend infrastructure
 
-If finished with workshops:
+If finished with workshop:
 - All resources cleaned up
 - No ongoing charges
 - Knowledge and skills gained! 🎉
 
-**Congratulations!** You've successfully completed Workshop 1, including proper resource cleanup. You now understand how to deploy, secure, and manage a serverless frontend on AWS! 🎉
+**Congratulations!** You've successfully completed Part 1: Frontend Deployment, including proper resource cleanup. You now understand how to deploy, secure, and manage a serverless frontend on AWS! 🎉
