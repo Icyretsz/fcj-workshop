@@ -5,53 +5,82 @@ weight: 1
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 7 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Get ready for mid-term exam
+* Study AWS Certified Practitioner questions
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Task                                                                             | Start Date | Completion Date | Reference Material                                                                                                                                                          |
+| --- |----------------------------------------------------------------------------------|------------|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 2   | - Get ready for mid-term exam: Study AWS Certified Cloud Practitioner questions  | 13/10/2025 | 13/10/2025      | <udemy.com/course/6-tests-aws-certified-cloud-practitioner-clf-c02-2025/> <https://github.com/kananinirav/AWS-Certified-Cloud-Practitioner-Notes/tree/master/practice-exam>                                                                                                  
+| 3   | - Get ready for mid-term exam: Study AWS Certified Cloud Practitioner questions  | 14/10/2025 | 14/10/2025      | <udemy.com/course/6-tests-aws-certified-cloud-practitioner-clf-c02-2025/> <https://github.com/kananinirav/AWS-Certified-Cloud-Practitioner-Notes/tree/master/practice-exam> |
+| 4   | - Get ready for mid-term exam: Study AWS Certified Cloud Practitioner questions  | 15/10/2025 | 15/10/2025      | <udemy.com/course/6-tests-aws-certified-cloud-practitioner-clf-c02-2025/> <https://github.com/kananinirav/AWS-Certified-Cloud-Practitioner-Notes/tree/master/practice-exam>                                                                                                  |
+| 5   | - Get ready for mid-term exam: Study AWS Certified Cloud Practitioner questions  | 16/10/2025 | 16/10/2025      | <https://github.com/kananinirav/AWS-Certified-Cloud-Practitioner-Notes/tree/master/practice-exam>                                                                                                                                 |
+| 6   | - Get ready for mid-term exam: Study AWS Certified Cloud Practitioner questions  | 17/10/2025 | 17/10/2025      | <https://github.com/kananinirav/AWS-Certified-Cloud-Practitioner-Notes/tree/master/practice-exam>                                                                                                                                  |
 
 
 ### Week 7 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+AWS Certified Cloud Practitioner Exam Preparation
+* Comprehensive exam preparation for mid-term:
+    * Completed multiple practice exams from Udemy course (6 full-length tests).
+    * Practiced with AWS Certified Cloud Practitioner practice questions from GitHub repository.
+    * Reviewed incorrect answers and strengthened understanding of weak areas.
+    * Focused on exam-specific question patterns and time management strategies.
 
-* Successfully created and configured an AWS Free Tier account.
+* Solidified understanding of AWS Cloud Concepts:
+    * Mastered AWS Well-Architected Framework pillars: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, and Sustainability.
+    * Understood AWS Cloud value proposition: cost savings, agility, elasticity, and global reach.
+    * Learned cloud computing models: IaaS, PaaS, SaaS and their use cases.
+    * Explored cloud deployment models: Public Cloud, Private Cloud, Hybrid Cloud.
+    * Understood the AWS shared responsibility model and security boundaries.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Deepened knowledge of AWS Security and Compliance:
+    * Learned AWS security services: IAM, AWS Organizations, CloudTrail, Config, GuardDuty.
+    * Understood IAM best practices: MFA, least privilege, password policies, role-based access.
+    * Explored AWS compliance programs: HIPAA, PCI-DSS, SOC, ISO certifications.
+    * Learned about encryption at rest and in transit using KMS and SSL/TLS.
+    * Understood network security: Security Groups, NACLs, AWS WAF, Shield.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Expanded knowledge of Core AWS Services:
+    * **Compute**: EC2 instance types, pricing models (On-Demand, Reserved, Spot), Lambda, ECS, EKS, Fargate.
+    * **Storage**: S3 storage classes, EBS volume types, EFS, S3 Glacier, Storage Gateway.
+    * **Database**: RDS engines (MySQL, PostgreSQL, Oracle, SQL Server), DynamoDB, Aurora, ElastiCache, Redshift.
+    * **Networking**: VPC components, Route 53, CloudFront, Direct Connect, VPN.
+    * **Management**: CloudWatch, CloudFormation, Systems Manager, Trusted Advisor, AWS Organizations.
 
-* Used AWS CLI to perform basic operations such as:
+* Mastered AWS Billing and Pricing:
+    * Understood AWS pricing models: pay-as-you-go, save when you reserve, pay less by using more.
+    * Learned cost management tools: Cost Explorer, Budgets, Cost and Usage Reports.
+    * Explored AWS Free Tier: 12 months free, always free, and trials.
+    * Understood pricing for key services: EC2, S3, RDS, Lambda, data transfer costs.
+    * Learned Total Cost of Ownership (TCO) calculator for comparing on-premises vs AWS costs.
+    * Explored cost optimization strategies: right-sizing, reserved instances, savings plans, spot instances.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+* Strengthened understanding of AWS Support Plans:
+    * Learned support tiers: Basic (free), Developer ($29/month), Business ($100/month), Enterprise ($15,000/month).
+    * Understood response times and support channels for each tier.
+    * Explored AWS Trusted Advisor checks available at different support levels.
+    * Learned about AWS Professional Services and Partner Network (APN).
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Gained insights into AWS Architecture Best Practices:
+    * Learned design principles for resilient architectures: loose coupling, stateless applications, fault tolerance.
+    * Understood high availability patterns: multi-AZ deployments, auto-scaling, load balancing.
+    * Explored disaster recovery strategies: backup and restore, pilot light, warm standby, hot site.
+    * Learned about AWS global infrastructure: Regions, Availability Zones, Edge Locations.
+    * Understood when to use which AWS service based on requirements.
+
+* Enhanced knowledge of AWS Migration and Innovation:
+    * Learned AWS migration strategies (6 R's): Rehost, Replatform, Refactor, Repurchase, Retire, Retain.
+    * Explored AWS migration services: Server Migration Service (SMS), Database Migration Service (DMS), Snow family.
+    * Understood AWS innovation services: Machine Learning (SageMaker), IoT, Analytics (Athena, Kinesis), AR/VR.
+    * Learned about AWS managed services to reduce operational overhead.
+
+* Practiced exam-taking strategies:
+    * Developed time management skills for 65 questions in 90 minutes.
+    * Learned to identify question types: scenario-based, service-specific, best practices.
+    * Practiced elimination technique for multiple-choice questions.
+    * Improved ability to understand AWS terminology and service names.
+    * Built confidence through repeated practice exams and score improvements.
