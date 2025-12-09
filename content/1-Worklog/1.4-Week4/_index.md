@@ -41,21 +41,3 @@ pre: " <b> 1.4. </b> "
     * Monitoring with CloudWatch: viewed metrics like CPUUtilization, CurrConnections, Evictions
     * Replication group and failover: created a replication group with multi-AZ and 1 replica per shard
     * Simulate failover to see new primary taking over
-* FCJ project development
-  * Refine main game logic:
-    * Add practice mode (singleplayer mode)
-    * Add player's caret with smooth animation when moving between characters
-    * Add color indicator for each character
-    * Add game duration
-    * Add logic for handling overflow characters at the end of each word
-  * Introduced multiplayer built on WebSocket
-    * Add room concept:
-      * Players can create rooms, other players can join rooms with roomId
-    * Add carets for each player that moves in real-time reflecting other players typing progress
-* AWS event participation:
-  * Participated in AWS GenAI Builder Club: AI-Driven Development Life Cycle: Reimagining Software Engineering
-  * Learned about AI in development concepts:
-    * How to leverage AI in the development cycle to improve software quality
-    * Current state of AI in software developing
-    * Learned about AI-driven development
-    * Learned about Kiro IDE through demos

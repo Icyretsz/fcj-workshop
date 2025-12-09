@@ -8,8 +8,9 @@ pre: " <b> 1.6. </b> "
 
 ### Week 6 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Learn about AWS security best practices and VPC networking
+* Study for AWS Certified Cloud Practitioner exam
+* Develop core game logic for FCJ Final Project (Type Rush)
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                           | Start Date | Completion Date | Reference Material                                                                                                                                                    |
@@ -47,4 +48,11 @@ pre: " <b> 1.6. </b> "
         * Explore and exploit common security risks on web applications on OWASP Juice Shop
         * Explore about AWS WAF
         * Study 66 questions of AWS Certified Cloud Practitioner exam
-
+* **FCJ Project Development**
+    * Completed **main game logic:**
+        * Added timing modes: 15, 30, 60, unlimited
+        * Built timer logic, countdown display and result calculation when the game ends
+    * Further discussion with the team about the project
+        * Multiplayer mode: 
+          * Type Race: typing race
+          * Wave Rush: typing race with multiple rounds

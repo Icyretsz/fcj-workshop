@@ -6,31 +6,32 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-During my internship at **Amazon Web Services / AWS FCJ Workforce** from **September 2025** to **December 2025**, I had the opportunity to learn, practice, and apply the knowledge acquired in school to a real-world working environment.  
-I participated in **developing TypeRush, a real-time multiplayer typing challenge platform using AWS serverless architecture**, through which I improved my skills in **programming (JavaScript/Node.js, Python, React), cloud architecture (AWS Lambda, API Gateway, S3, CloudFront, WAF, RDS, DynamoDB, Cognito, Bedrock), DevOps (CI/CD, Docker, monitoring, security, automation), data analysis (Glue, Athena, QuickSight, SageMaker), communication, teamwork, problem-solving, and professional conduct**.  
+Throughout my internship at **Amazon Web Services / AWS FCJ Workforce** spanning **September 2025 to December 2025**, I gained valuable experience applying academic knowledge to practical workplace scenarios.  
 
-In terms of work ethic, I always strived to complete tasks well, complied with workplace regulations, and actively engaged with colleagues to improve work efficiency.
+My primary contribution involved **building TypeRush, a real-time multiplayer typing game platform leveraging AWS serverless technologies**. This project enabled me to strengthen my capabilities in **software development (JavaScript/Node.js, Python, React), cloud infrastructure (AWS Lambda, API Gateway, S3, CloudFront, WAF, RDS, DynamoDB, Cognito, Bedrock), operational practices (CI/CD pipelines, Docker containerization, system monitoring, security implementation, process automation), data engineering (Glue, Athena, QuickSight, SageMaker), interpersonal skills, collaborative work, analytical thinking, and workplace professionalism**.  
 
-To objectively reflect on my internship period, I would like to evaluate myself based on the following criteria:
+Regarding my work approach, I consistently maintained high standards for deliverables, adhered to organizational policies, and fostered positive relationships with team members to enhance collective productivity.
+
+For an honest reflection of my internship experience, I have evaluated myself across the following dimensions:
 
 | No. | Criteria                            | Description                                                                                      | Good | Fair | Average |
 | --- | ----------------------------------- | ------------------------------------------------------------------------------------------------ |------|-----| ------- |
-| 1   | **Professional knowledge & skills** | Understanding of the field, applying knowledge in practice, proficiency with tools, work quality | ☐    | ✅   | ☐       |
-| 2   | **Ability to learn**                | Ability to absorb new knowledge and learn quickly                                                | ☐    | ✅   | ☐       |
-| 3   | **Proactiveness**                   | Taking initiative, seeking out tasks without waiting for instructions                            | ☐    | ☐   | ✅        |
-| 4   | **Sense of responsibility**         | Completing tasks on time and ensuring quality                                                    | ✅    | ☐   | ☐       |
-| 5   | **Discipline**                      | Adhering to schedules, rules, and work processes                                                 | ☐    | ☐   | ✅       |
-| 6   | **Progressive mindset**             | Willingness to receive feedback and improve oneself                                              | ☐    | ✅   | ☐       |
-| 7   | **Communication**                   | Presenting ideas and reporting work clearly                                                      | ☐    | ✅   | ☐       |
-| 8   | **Teamwork**                        | Working effectively with colleagues and participating in teams                                   | ✅    | ☐   | ☐       |
-| 9   | **Professional conduct**            | Respecting colleagues, partners, and the work environment                                        | ☐    | ✅   | ☐       |
-| 10  | **Problem-solving skills**          | Identifying problems, proposing solutions, and showing creativity                                | ☐    | ✅   | ☐       |
-| 11  | **Contribution to project/team**    | Work effectiveness, innovative ideas, recognition from the team                                  | ✅    | ☐   | ☐       |
-| 12  | **Overall**                         | General evaluation of the entire internship period                                               | ☐   | ✅    | ☐       |
+| 1   | **Technical competence**            | Domain knowledge, practical application, tool proficiency, output quality                        | ☐    | ✅   | ☐       |
+| 2   | **Learning agility**                | Capacity to acquire and apply new concepts rapidly                                               | ☐    | ✅   | ☐       |
+| 3   | **Initiative**                      | Self-motivation and autonomous task identification                                               | ☐    | ☐   | ✅       |
+| 4   | **Accountability**                  | Timely delivery and quality assurance of assigned work                                           | ✅    | ☐   | ☐       |
+| 5   | **Adherence to standards**          | Compliance with schedules, regulations, and established procedures                               | ☐    | ☐   | ✅       |
+| 6   | **Growth orientation**              | Openness to constructive criticism and continuous self-improvement                               | ☐    | ✅   | ☐       |
+| 7   | **Communication effectiveness**     | Clarity in expressing concepts and presenting work updates                                       | ☐    | ✅   | ☐       |
+| 8   | **Collaboration**                   | Productive engagement with peers and team dynamics                                               | ✅    | ☐   | ☐       |
+| 9   | **Workplace professionalism**       | Respect toward colleagues, stakeholders, and organizational culture                              | ☐    | ✅   | ☐       |
+| 10  | **Analytical capabilities**         | Issue identification, solution development, and innovative thinking                              | ☐    | ✅   | ☐       |
+| 11  | **Impact and value creation**       | Work quality, creative contributions, team recognition                                           | ✅    | ☐   | ☐       |
+| 12  | **Overall performance**             | Comprehensive evaluation of the complete internship experience                                   | ☐    | ✅   | ☐       |
 
-### Needs Improvement
+### Areas for Development
 
-* Continue to improve discipline and time management.
-* Develop stronger problem-solving and analytical skills.
-* Enhance communication abilities in various contexts.
-* Seek opportunities for further growth and learning.
+* Strengthen discipline and time management practices.
+* Build more robust problem-solving and critical thinking skills.
+* Improve communication proficiency across diverse situations.
+* Actively pursue additional learning and professional development opportunities.

@@ -8,38 +8,38 @@ pre: " <b> 7. </b> "
 
 ### Overall Evaluation
 
-**1. Working Environment**  
-The most satisfying aspect of my internship was working and learning together with my team. The collaborative environment made it enjoyable to tackle challenges and grow alongside others. However, I feel that the atmosphere could be more open and supportive, as sometimes it felt a bit oppressive, making students hesitant to ask for help.
+**1. Work Environment**  
+The highlight of my internship experience was collaborating and developing skills with my teammates. The team-based setting made problem-solving engaging and fostered mutual growth. That said, I noticed the environment could benefit from being more welcoming and encouraging, as at times it seemed somewhat restrictive, causing interns to feel reluctant about requesting guidance.
 
-**2. Support from Mentor / Team Admin**  
-While the mentor and admin team provided support, I believe there is room to create a better mentor-student relationship. Encouraging more approachable and interactive guidance would help students feel more comfortable seeking assistance.
+**2. Mentorship and Administrative Support**  
+The mentors and administrative team offered assistance, though I believe there's potential to strengthen the mentor-intern dynamic. Fostering more accessible and engaging mentorship would help interns feel more at ease when seeking help.
 
-**3. Relevance of Work to Academic Major**  
-The internship was not directly related to my major, but the knowledge and experience I gained may be useful for my future personal projects. I appreciated the opportunity to explore new areas, even if they were outside my main field of study.
+**3. Alignment with Academic Background**  
+This internship diverged from my primary field of study, yet the skills and insights acquired may prove beneficial for future personal endeavors. I valued the chance to venture into unfamiliar territories, despite them being outside my core academic focus.
 
-**4. Learning & Skill Development Opportunities**  
-The program relied heavily on self-taught learning. While this encouraged independence, I think clearer guidelines or orientation at the beginning would have helped, as I was unsure about my purpose and direction in the first few weeks.
+**4. Professional Growth and Learning**  
+The program emphasized autonomous learning significantly. While this promoted self-reliance, I think providing more explicit direction or initial orientation would have been advantageous, as I experienced uncertainty about my objectives during the early weeks.
 
-**5. Company Culture & Team Spirit**  
-The team was collaborative and supportive, but I would not strongly recommend this internship to friends unless they are comfortable with a self-directed approach. For those who prefer more structured guidance, independent study might be more beneficial before joining.
+**5. Organizational Culture and Team Dynamics**  
+The team demonstrated cooperation and mutual support, though I wouldn't enthusiastically recommend this opportunity to peers unless they're comfortable with independent learning. Those who prefer more structured supervision might benefit from self-study before participating.
 
-**6. Internship Policies / Benefits**  
-Although I do not plan to continue with the program since it is not my major, I am grateful for the experience and the lessons learned. The knowledge gained could be valuable for future personal projects.
+**6. Program Structure and Compensation**  
+While I don't intend to pursue this program further due to its disconnect from my major, I'm thankful for the exposure and insights gained. The acquired knowledge could prove valuable for future independent projects.
 
 ---
 
 ### Additional Questions
-- What did you find **most satisfying** during your internship?  
-Working and learning together with my team.
-- What do you think the company **should improve** for future interns?  
-Create a more open and supportive mentor-student atmosphere to encourage students to ask for help.
-- If recommending to a friend, would you **suggest they intern here**? Why or why not?  
-Not really, as the program relies mostly on self-taught learning. I would suggest they study independently first.
+- What aspect of your internship was **most rewarding**?  
+Collaborating and growing alongside my team members.
+- What changes would you recommend the organization **implement** for future participants?  
+Foster a more welcoming and encouraging mentor-intern relationship to help students feel comfortable requesting assistance.
+- Would you **recommend this internship** to a friend? What's your reasoning?  
+Not particularly, since the program emphasizes self-directed learning heavily. I'd advise friends to pursue independent study beforehand.
 
 ---
 
-### Suggestions & Expectations
-- Do you have any suggestions to improve the internship experience?  
-Provide clearer guidelines or orientation at the start to help new interns understand their purpose and direction.
-- Would you like to continue this program in the future?  
-No, as it is not directly related to my major, but the knowledge gained may be useful for personal projects.
+### Recommendations & Future Outlook
+- Do you have recommendations for enhancing the internship program?  
+Offer more comprehensive guidance or onboarding sessions initially to help new participants clarify their goals and trajectory.
+- Are you interested in continuing with this program?  
+No, given its misalignment with my academic major, though the experience may benefit my personal projects down the line.

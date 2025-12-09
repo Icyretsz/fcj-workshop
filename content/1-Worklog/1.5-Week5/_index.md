@@ -100,3 +100,12 @@ pre: " <b> 1.5. </b> "
     * Tested end-to-end workflows and refined implementation.
     * Documented architecture decisions and implementation details.
     * Prepared project presentation and demonstration materials.
+    
+* **FCJ Project Development**
+    * Completed **main game logic:**
+        * Added timing modes: 15, 30, 60, unlimited
+        * Built timer logic, countdown display and result calculation when the game ends
+    * Further discussion with the team about the project
+        * Multiplayer mode: 
+          * Type Race: typing race
+          * Wave Rush: typing race with multiple rounds

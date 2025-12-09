@@ -18,15 +18,7 @@ chapter: false
 
 &emsp; **Major:** Information Technology
 
-&emsp; **Class:** 
-
-&emsp; **Internship Company:** 
-
-&emsp; **Internship Position:** 
-
-&emsp; **Internship Duration:** 
-
-![Your profile picture](/images/avatar.png)
+![portrait](/images/portrait.jpg)
 
 ### Report Content
 
