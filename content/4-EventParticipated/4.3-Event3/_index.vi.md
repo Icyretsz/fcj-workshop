@@ -1,6 +1,6 @@
 ---
 title: "Tái định hình DevOps với AWS Generative AI"
-date: "`r Sys.Date()`"
+date: "2025-09-15"
 weight: 3
 chapter: false
 pre: " <b> 4.3. </b> "

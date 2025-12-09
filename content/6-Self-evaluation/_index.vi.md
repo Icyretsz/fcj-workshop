@@ -1,6 +1,6 @@
 ---
 title: "Tự đánh giá bản thân"
-date: "`r.Sys.Date()`"
+date: "2025-09-15"
 weight: 6
 chapter: false
 pre: " <b> 6. </b> "

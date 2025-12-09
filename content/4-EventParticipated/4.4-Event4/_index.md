@@ -1,6 +1,6 @@
 ---
 title: "Generative AI with Amazon Bedrock"
-date: "`r Sys.Date()`"
+date: "2025-09-15"
 weight: 4
 chapter: false
 pre: " <b> 4.4. </b> "

@@ -1,6 +1,6 @@
 ---
 title: "DevOps on AWS"
-date: "`r Sys.Date()`"
+date: "2025-09-15"
 weight: 5
 chapter: false
 pre: " <b> 4.5. </b> "
