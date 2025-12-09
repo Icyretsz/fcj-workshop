@@ -69,7 +69,6 @@ Build a secure, scalable backend infrastructure. You'll create RESTful APIs, imp
 ## Learning Outcomes
 
 By completing this workshop series, you will be able to:
-
 - Design and implement serverless architectures on AWS
 - Secure web applications using industry best practices
 - Implement user authentication and authorization flows
@@ -81,7 +80,6 @@ By completing this workshop series, you will be able to:
 ## Cost Considerations
 
 This workshop uses AWS services that may incur costs. We'll use AWS Free Tier eligible services where possible, but you should:
-
 - Monitor your AWS billing dashboard regularly
 - Delete resources after completing each workshop if not continuing immediately
 - Set up billing alerts to avoid unexpected charges

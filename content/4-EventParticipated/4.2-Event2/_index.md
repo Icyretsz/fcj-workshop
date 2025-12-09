@@ -1,126 +1,106 @@
 ---
-title: "Event 2"
-date: "2025-09-15"
-weight: 1
+title: "Data Science On AWS"
+date: "`r Sys.Date()`"
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
 
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+
+# Summary Report
 
 ### Event Objectives
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+- Provide a comprehensive overview of building a modern Data Science system on AWS.
+- Introduce the end-to-end Data Science pipeline, from data processing to model deployment.
+- Offer hands-on experience with key AWS services like AWS Glue and Amazon SageMaker.
+- Discuss practical considerations such as cost, performance, and the benefits of cloud vs. on-premise solutions.
 
 ### Speakers
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+- **Văn Hoàng Kha** – Cloud Solutions Architect, AWS Community Builder
+- **Bạch Doãn Vương** – Cloud Develops Engineer, AWS Community Builder
 
 ### Key Highlights
 
-#### Identifying the drawbacks of legacy application architecture
+#### End-to-End Data Science Pipeline on AWS
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+The workshop outlined the complete data science journey on the cloud, using core services:
 
-#### Transitioning to modern application architecture – Microservices
+- **Amazon S3**: For scalable data storage.
+- **AWS Glue**: For serverless data integration, ETL (Extract, Transform, Load), and data cleaning.
+- **Amazon SageMaker**: For building, training, and deploying machine learning models at scale.
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+#### Practical Demonstrations
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+- **Demo 1: Data Processing with AWS Glue**: Showcased how to process and clean a real-world IMDb dataset, emphasizing the importance of data quality for model accuracy.
+- **Demo 2: Model Training with SageMaker**: Demonstrated the process of training and deploying a Sentiment Analysis model, making the abstract concepts of ML deployment concrete.
+- **Integrating Custom Models**: Showcased how to leverage frameworks like TensorFlow and PyTorch within SageMaker, using a sample project from a provided GitHub repository.
 
-#### Domain-Driven Design (DDD)
+#### Broadening AI/ML Capabilities with Managed Services
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+An overview of AWS's pre-built AI services that accelerate development:
 
-#### Event-Driven Architecture
-
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
-
-#### Compute Evolution
-
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
-
-#### Amazon Q Developer
-
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
+- **Amazon Transcribe**: Speech-to-text conversion.
+- **Amazon Comprehend**: Natural language processing for sentiment analysis and topic extraction.
+- **Amazon Rekognition**: Image and video analysis.
+- **Amazon Personalize**: Building personalized recommendation systems.
 
 ### Key Takeaways
 
-#### Design Mindset
+#### Data-First Mindset
 
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
+- **Business-first approach**: Always start with the business context of the data, as emphasized by the need for feature engineering.
+- **Data quality is paramount**: The workshop stressed that the accuracy of any ML model is directly dependent on the quality of the input data.
+- **Data as an asset**: Data collection, governance, and security are the foundational pillars of a data-driven organization.
 
 #### Technical Architecture
 
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
+- **Modular Pipeline**: The standard architecture involves a pipeline from S3 (storage) to AWS Glue (ETL) to Amazon SageMaker (ML), allowing for a clean separation of concerns.
+- **Flexibility**: AWS supports both low-code solutions like SageMaker Canvas and code-intensive custom model training using frameworks like TensorFlow/PyTorch.
+- **Serverless benefits**: Using services like AWS Glue removes the need for managing infrastructure, allowing teams to focus on data and models.
 
-#### Modernization Strategy
+#### Strategy
 
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
+- **Phased approach**: Start with data collection and cleaning before moving to complex model training.
+- **Cloud vs. On-premise**: The discussion highlighted that the cloud offers significant advantages in scalability, pay-for-what-you-use cost models, and access to powerful computing resources without upfront investment.
+- **ROI Measurement**: Leverage cloud benefits to reduce development time and infrastructure overhead, leading to faster time-to-market for AI-powered features.
 
 ### Applying to Work
 
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
+- **Automate ETL**: Use AWS Glue to create automated data cleaning and preparation jobs for analytics and ML.
+- **Adopt SageMaker**: Pilot Amazon SageMaker for training and deploying ML models to streamline the MLOps lifecycle.
+- **Implement Sentiment Analysis**: Apply the concepts from the demo to analyze customer feedback from reviews or support tickets.
+- **Explore Pre-built AI**: Integrate services like Amazon Rekognition for content moderation or Amazon Transcribe for call center analytics.
+- **Consolidate Knowledge**: Build a small project based on the workshop's guidance to reinforce the concepts learned.
 
 ### Event Experience
 
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
+Attending the "Data Science on AWS" workshop provided a valuable, hands-on journey into cloud-based machine learning. Key experiences included:
 
 #### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
+- The speakers, both AWS Community Builders, shared practical insights and best practices from their real-world experience.
 
 #### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
+- The live demos of processing data with AWS Glue and training a model with SageMaker were extremely effective at translating theory into practice.
 
 #### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
-
-#### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
+- Explored the comprehensive AWS ecosystem for data science, understanding how different services fit together to form a cohesive pipeline.
+- Learned about both fully managed AI services and the powerful customization options available within SageMaker.
 
 #### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
+- A solid data preparation strategy is non-negotiable for success in machine learning.
+- AWS significantly lowers the barrier to entry for building and deploying sophisticated data science systems.
+- Modern cloud platforms provide the flexibility to choose between low-code tools for speed and custom code for specific, complex requirements.
 
 #### Some event photos
-*Add your event photos here*  
+<div style="display: flex; gap: 10px;">
+  <img src="/images/event2pic1.jpg" alt="Event Photo 1" style="width: 50%;">
+  <img src="/images/event2pic2.jpg" alt="Event Photo 2" style="width: 50%;">
+</div>
+<div style="text-align: center;">
+  <img src="/images/event2pic3.jpeg" alt="Event Photo 3" style="width: 50%;">
+</div>
 
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+> Overall, the workshop provided not only technical knowledge but also practical experience with building end-to-end data science pipelines on AWS, emphasizing the importance of data quality and the power of cloud-native ML services.

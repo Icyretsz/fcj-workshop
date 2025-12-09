@@ -1,125 +1,106 @@
 ---
-title: "Event 2"
-date: "2025-09-15"
-weight: 1
+title: "Data Science trên AWS"
+date: "`r Sys.Date()`"
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
 
-### Mục Đích Của Sự Kiện
+# Bài thu hoạch
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+### Mục tiêu Sự kiện
 
-### Danh Sách Diễn Giả
+- Cung cấp cái nhìn tổng quan toàn diện về việc xây dựng hệ thống Data Science hiện đại trên AWS.
+- Giới thiệu end-to-end Data Science pipeline, từ data processing đến model deployment.
+- Cung cấp hands-on với các dịch vụ chủ chốt như AWS Glue và Amazon SageMaker.
+- Thảo luận các yếu tố thực tiễn như cost, performance, và lợi ích của cloud vs on-premise.
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+### Diễn giả
 
-### Nội Dung Nổi Bật
+- **Văn Hoàng Kha** – Cloud Solutions Architect, AWS Community Builder
+- **Bạch Doãn Vương** – Cloud Develops Engineer, AWS Community Builder
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+### Nội dung Nổi bật
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+#### End-to-End Data Science Pipeline trên AWS
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+Workshop mô tả toàn bộ hành trình data science trên cloud, sử dụng các dịch vụ cốt lõi:
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+- **Amazon S3**: Lưu trữ dữ liệu scalable.
+- **AWS Glue**: Serverless data integration, ETL (Extract, Transform, Load), và data cleaning.
+- **Amazon SageMaker**: Để build, train và deploy machine learning models at scale.
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+#### Trình diễn Thực hành
 
-#### Domain-Driven Design (DDD)
+- **Demo 1: Data Processing với AWS Glue**: Trình diễn cách process và clean một real-world IMDb dataset, nhấn mạnh tầm quan trọng của data quality đối với model accuracy.
+- **Demo 2: Model Training với SageMaker**: Minh họa quy trình train và deploy một Sentiment Analysis model, giúp các khái niệm ML deployment trở nên cụ thể.
+- **Tích hợp Custom Models**: Trình bày cách leverage frameworks như TensorFlow và PyTorch trong SageMaker, sử dụng sample project từ một GitHub repository.
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+#### Mở rộng Năng lực AI/ML với Managed Services
 
-#### Event-Driven Architecture
+Tổng quan về các pre-built AI services của AWS giúp tăng tốc phát triển:
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+- **Amazon Transcribe**: Speech-to-text conversion.
+- **Amazon Comprehend**: Natural Language Processing cho sentiment analysis và topic extraction.
+- **Amazon Rekognition**: Phân tích hình ảnh và video.
+- **Amazon Personalize**: Xây dựng personalized recommendation systems.
 
-#### Compute Evolution
+### Những điểm nhấn chính
 
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
+#### Tư duy Data-First
 
-#### Amazon Q Developer
+- **Business-first approach**: Luôn bắt đầu từ business context của dữ liệu, được nhấn mạnh qua nhu cầu feature engineering.
+- **Data quality là tối quan trọng**: Độ chính xác của bất kỳ ML model nào phụ thuộc trực tiếp vào chất lượng input data.
+- **Data như một tài sản**: Data collection, governance và security là các trụ cột nền tảng của một data-driven organization.
 
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+#### Kiến trúc Kỹ thuật
 
-### Những Gì Học Được
+- **Modular Pipeline**: Kiến trúc tiêu chuẩn gồm pipeline từ S3 (storage) → AWS Glue (ETL) → Amazon SageMaker (ML), cho phép separation of concerns rõ ràng.
+- **Tính linh hoạt**: AWS hỗ trợ cả low-code như SageMaker Canvas và code-intensive custom model training với TensorFlow/PyTorch.
+- **Lợi ích serverless**: Dùng các services như AWS Glue giúp loại bỏ quản trị hạ tầng, cho phép teams tập trung vào data và models.
 
-#### Tư Duy Thiết Kế
+#### Chiến lược
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+- **Phased approach**: Bắt đầu với data collection và cleaning trước khi chuyển sang model training phức tạp.
+- **Cloud vs On-premise**: Cloud mang lại lợi thế về scalability, pay-for-what-you-use cost models, và khả năng truy cập tài nguyên compute mạnh mẽ mà không cần đầu tư ban đầu.
+- **Đo lường ROI**: Tận dụng lợi ích cloud để giảm development time và infrastructure overhead, rút ngắn time-to-market cho AI-powered features.
 
-#### Kiến Trúc Kỹ Thuật
+### Ứng dụng vào Công việc
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
+- **Tự động hóa ETL**: Dùng AWS Glue để tạo các job data cleaning và preparation tự động cho analytics và ML.
+- **Áp dụng SageMaker**: Pilot Amazon SageMaker cho training và deploying ML models để streamline MLOps lifecycle.
+- **Triển khai Sentiment Analysis**: Ứng dụng các khái niệm từ demo để phân tích phản hồi khách hàng từ reviews hoặc support tickets.
+- **Khai thác Pre-built AI**: Tích hợp các services như Amazon Rekognition cho content moderation hoặc Amazon Transcribe cho call center analytics.
+- **Củng cố kiến thức**: Xây dựng một project nhỏ dựa trên hướng dẫn của workshop để củng cố các khái niệm đã học.
 
-#### Chiến Lược Hiện Đại Hóa
+### Trải nghiệm Sự kiện
 
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
+Tham dự workshop "Data Science on AWS" mang lại một hành trình hands-on giá trị về machine learning trên cloud. Một số trải nghiệm chính:
 
-### Ứng Dụng Vào Công Việc
+#### Học hỏi từ các diễn giả giàu kinh nghiệm
+- Các diễn giả, đều là AWS Community Builders, chia sẻ practical insights và best practices từ kinh nghiệm thực tế.
 
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
+#### Trải nghiệm kỹ thuật hands-on
+- Các live demo về processing data với AWS Glue và training model với SageMaker giúp chuyển hóa lý thuyết thành thực tiễn rất hiệu quả.
 
-### Trải nghiệm trong event
-
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
-
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
-
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
-
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
-
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
+#### Tận dụng công cụ hiện đại
+- Khám phá hệ sinh thái AWS toàn diện cho data science, hiểu cách các dịch vụ kết hợp để tạo thành một cohesive pipeline.
+- Tìm hiểu cả fully managed AI services và các tùy biến mạnh mẽ trong SageMaker.
 
 #### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
+- Chiến lược data preparation vững chắc là điều không thể thiếu để thành công trong machine learning.
+- AWS giúp hạ thấp đáng kể rào cản xây dựng và triển khai các hệ thống data science tiên tiến.
+- Nền tảng cloud hiện đại mang lại sự linh hoạt lựa chọn giữa low-code để tăng tốc và custom code cho các yêu cầu phức tạp, đặc thù.
 
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+#### Một số hình ảnh sự kiện
+<div style="display: flex; gap: 10px;">
+  <img src="/images/event2pic1.jpg" alt="Event Photo 1" style="width: 50%;">
+  <img src="/images/event2pic2.jpg" alt="Event Photo 2" style="width: 50%;">
+</div>
+<div style="text-align: center;">
+  <img src="/images/event2pic3.jpeg" alt="Event Photo 3" style="width: 50%;">
+</div>
+
+> Tổng thể, workshop không chỉ mang lại kiến thức kỹ thuật mà còn trải nghiệm thực hành trong việc xây dựng end-to-end data science pipelines trên AWS, nhấn mạnh tầm quan trọng của data quality và sức mạnh của cloud-native ML services.

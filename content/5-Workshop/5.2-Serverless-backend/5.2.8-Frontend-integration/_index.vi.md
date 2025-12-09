@@ -1,19 +1,70 @@
 ---
-title : "Giới thiệu"
+title : "Tích hợp Frontend"
 date :  "2025-09-15" 
-weight : 1
+weight : 8 
 chapter : false
-pre : " <b> 5.1. </b> "
+pre : " <b> 5.2.8 </b> "
 ---
 
-#### Giới thiệu về VPC Endpoint
+## Tổng quan
 
-+ Điểm cuối VPC (endpoint) là thiết bị ảo. Chúng là các thành phần VPC có thể mở rộng theo chiều ngang, dự phòng và có tính sẵn sàng cao. Chúng cho phép giao tiếp giữa tài nguyên điện toán của bạn và dịch vụ AWS mà không gây ra rủi ro về tính sẵn sàng.
-+ Tài nguyên điện toán đang chạy trong VPC có thể truy cập Amazon S3 bằng cách sử dụng điểm cuối Gateway. Interface Endpoint  PrivateLink có thể được sử dụng bởi tài nguyên chạy trong VPC hoặc tại TTDL.
+Ở phần này, bạn sẽ kết hợp tất cả các thành phần backend đã xây dựng để kết nối với frontend CloudFront đã thiết lập ở phần trước.
 
-#### Tổng quan về workshop
-Trong workshop này, bạn sẽ sử dụng hai VPC.
-+ **"VPC Cloud"** dành cho các tài nguyên cloud như Gateway endpoint và EC2 instance để kiểm tra.
-+ **"VPC On-Prem"** mô phỏng môi trường truyền thống như nhà máy hoặc trung tâm dữ liệu của công ty. Một EC2 Instance chạy phần mềm StrongSwan VPN đã được triển khai trong "VPC On-prem" và được cấu hình tự động để thiết lập đường hầm VPN Site-to-Site với AWS Transit Gateway. VPN này mô phỏng kết nối từ một vị trí tại TTDL (on-prem) với AWS cloud. Để giảm thiểu chi phí, chỉ một phiên bản VPN được cung cấp để hỗ trợ workshop này. Khi lập kế hoạch kết nối VPN cho production workloads của bạn, AWS khuyên bạn nên sử dụng nhiều thiết bị VPN để có tính sẵn sàng cao.
+**Bạn sẽ đạt được:**
+- Cấu hình Lambda function để thêm CORS headers
+- Cấu hình CORS cho API Gateway
+- Cấu hình Cognito callback URL và login URL trỏ về CloudFront endpoint
+- Kiểm thử các thao tác CRUD của ứng dụng
 
-![overview](/images/5-Workshop/5.1-Workshop-overview/diagram1.png)
+**Thời gian ước tính**: 30 phút
+
+## Bước 1: Cấu hình Lambda function
+Vì chúng ta gọi API từ một origin khác (CloudFront), cần cấu hình CORS headers đúng cách.
+
+1. Vào Lambda console, chọn **workshop-lambda-sm-rds**
+2. Xem hàm `response`, hàm này sẽ thêm các CORS headers phù hợp vào phản hồi
+3. Đảm bảo trường `Access-Control-Allow-Origin` được đặt là CloudFront endpoint của bạn
+
+```javascript
+function respond(statusCode, payload) {
+    return {
+        statusCode,
+        headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Headers": "Content-Type",
+            "Access-Control-Allow-Origin": "https://[cloudfront-id].cloudfront.net", //thêm CloudFront endpoint của bạn tại đây
+            "Access-Control-Allow-Methods": "OPTIONS,POST,GET,DELETE"
+        },
+        body: JSON.stringify(payload),
+    };
+}
+```
+- Đảm bảo API chỉ cho phép gọi từ origin đáng tin cậy (CloudFront frontend của bạn)
+
+## Bước 2: Cấu hình CORS cho các resources của API Gateway
+
+- Đảm bảo đã cấu hình CORS đúng cho các resources `/users` và `/{id}`. Việc này đã thực hiện ở [5.2.6 - API Gateway setup]({{< relref "/5-Workshop/5.2-Serverless-backend/5.2.6-API-Gateway" >}}#29-enable-cors-on-each-resources)
+
+## Bước 3: Cấu hình Cognito callback URL và login URL trỏ về CloudFront endpoint
+
+- Việc này đã thực hiện ở [5.2.7 - Cognito]({{< relref "/5-Workshop/5.2-Serverless-backend/5.2.7-Cognito" >}}#72-configure-allowed-callback-urls)
+
+## Bước 4: Kiểm thử ứng dụng
+
+1. Truy cập CloudFront endpoint của bạn
+
+![Home page](/images/5-Workshop/5.2-Serverless/5.2.8-Frontend-integration/2.png)
+
+2. Nhấp **Sign in**
+3. Bạn sẽ được chuyển hướng đến giao diện đăng nhập hosted login UI
+
+![login](/images/5-Workshop/5.2-Serverless/5.2.8-Frontend-integration/3.png)
+
+4. Đăng nhập thành công, bạn sẽ được chuyển về trang chủ.
+5. Trang chủ sẽ hiển thị thông tin và token của bạn, cùng danh sách người dùng lấy từ RDS
+
+![homepage](/images/5-Workshop/5.2-Serverless/5.2.8-Frontend-integration/4.png)
+
+6. Bạn có thể kiểm thử các thao tác CRUD
+
+## Kết thúc workshop

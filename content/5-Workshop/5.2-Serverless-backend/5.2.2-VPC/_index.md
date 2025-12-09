@@ -72,8 +72,6 @@ VPC (10.0.0.0/16)
 │   └── For RDS Database (multi-AZ requirement)  
 ```
 
- 
-
 ### Why 4 subnets across 2 Availability Zones?
 Private Subnet 1 is preserved for a Lambda function
 

@@ -101,8 +101,7 @@ However, for the sake of simplicity in this workshop, we will place all user-rel
 - `PUT /users/{id}` - Update user
 - `DELETE /users/{id}` - Delete user
 
-You can modify it as you like. When you are ready, move on to next steps to build and deploy our
-source code to Lambda
+You can modify it as you like. When you are ready, move on to next steps to build and deploy our source code to Lambda
 
 ## Step 2: Build Lambda Deployment Package
 
@@ -123,8 +122,7 @@ npm run build
 
 This creates `dist` folder in root directory
 
-Now find `node_modules` folder then copy it to
-`dist` folder
+Now find `node_modules` folder then copy it to `dist` folder
 
 When complete, select all files in `dist` folder, compress them to **zip** and name it userHandler
 
@@ -401,7 +399,3 @@ Proceed to **Part 5: API Gateway Setup** to create REST API endpoints that will 
 ---
 
 **Ready to continue?** Your Lambda function is now fully functional and ready to be exposed via API Gateway! 🚀
-
-
-
-

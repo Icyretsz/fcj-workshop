@@ -798,5 +798,3 @@ Proceed to **Part 6: Amazon Cognito Configuration** to secure API endpoints with
 ---
 
 **Ready to continue?** Your API endpoints are now fully functional and ready! 🚀
-
-

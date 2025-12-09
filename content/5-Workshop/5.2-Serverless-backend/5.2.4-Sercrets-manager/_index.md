@@ -108,9 +108,7 @@ a RDS-managed secret for us. Let's view it
     - **Rotate immediately when the secret is stored (checkbox)**
       - If checked, Secrets Manager will rotate the secret immediately after it is created or stored. After that, it follows the regular rotation schedule.
 
-
 ![Secret rotation edit](/images/5-Workshop/5.2-Serverless/5.2.4-Secrets-manager/6.png)
-
 
 ## Step 2: Create IAM Role for Lambda Access
 

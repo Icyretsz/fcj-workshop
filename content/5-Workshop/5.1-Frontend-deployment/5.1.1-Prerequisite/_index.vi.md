@@ -1,5 +1,5 @@
 ---
-title : "Yêu cầu trước khi bắt đầu"
+title : "Yêu cầu chuẩn bị"
 date :  "2025-09-15" 
 weight : 1 
 chapter : false
@@ -8,46 +8,46 @@ pre : " <b> 5.1.1 </b> "
 
 ### Kiến thức AWS cần thiết
 
-- **AWS Console Navigation**: Khả năng điều hướng AWS Management Console và tìm kiếm các dịch vụ
-- **Basic AWS Concepts**: Hiểu biết về AWS regions, availability zones và các tương tác dịch vụ cơ bản
-- **Không cần kinh nghiệm trước với S3, CloudFront hoặc WAF** - chúng tôi sẽ hướng dẫn từng bước
+- **AWS Console Navigation**: Biết cách sử dụng AWS Management Console và tìm kiếm dịch vụ
+- **Basic AWS Concepts**: Hiểu về region, availability zone và cách các dịch vụ AWS tương tác
+- **Không cần kinh nghiệm với S3, CloudFront, WAF** – sẽ được hướng dẫn từng bước
 
 ### Kỹ năng kỹ thuật cần thiết
 
-- **Basic Web Development**: Hiểu biết về HTML, CSS và JavaScript
-- **File System Operations**: Khả năng tạo, chỉnh sửa và tổ chức các tệp và thư mục
-- **Command Line Basics**: Thoải mái với việc chạy các lệnh terminal/command prompt cơ bản
-- **Text Editing**: Quen thuộc với bất kỳ code editor hoặc IDE nào
+- **Basic Web Development**: Hiểu về HTML, CSS, JavaScript
+- **File System Operations**: Biết cách tạo, chỉnh sửa, tổ chức file và thư mục
+- **Command Line Basics**: Sử dụng được terminal/command prompt cơ bản
+- **Text Editing**: Quen với code editor hoặc IDE
 
-### Thiết lập tài khoản AWS cần thiết
+### Thiết lập tài khoản AWS
 
-Trước khi bắt đầu workshop này, hãy đảm bảo bạn có:
+Trước khi bắt đầu, hãy đảm bảo bạn có:
 
 1. **AWS Account**
-    - Tài khoản AWS đang hoạt động với quyền truy cập quản trị
-    - Thẻ tín dụng đã đăng ký (bắt buộc ngay cả với Free Tier)
-    - MFA (Multi-Factor Authentication) được bật trên tài khoản root (khuyến nghị mạnh mẽ)
+    - Tài khoản AWS có quyền admin
+    - Đã thêm thẻ tín dụng (bắt buộc kể cả Free Tier)
+    - Đã bật MFA cho tài khoản root (rất khuyến khích)
 
 2. **IAM User** (Khuyến nghị)
-    - IAM user với các quyền phù hợp thay vì sử dụng tài khoản root
-    - Các quyền cần thiết:
+    - Tạo IAM user với quyền phù hợp, không dùng tài khoản root
+    - Quyền cần thiết:
         - `AmazonS3FullAccess`
         - `CloudFrontFullAccess`
         - `WAFv2FullAccess`
-        - `AWSCertificateManagerFullAccess` (nếu sử dụng custom domain)
-    - Access key và secret key đã được tạo (để truy cập CLI)
+        - `AWSCertificateManagerFullAccess` (nếu dùng custom domain)
+    - Đã tạo access key và secret key (cho CLI)
 
 3. **Billing Alerts**
-    - Thiết lập AWS Budgets hoặc billing alerts để theo dõi chi phí
-    - Khuyến nghị: Đặt cảnh báo ở ngưỡng $10
+    - Thiết lập AWS Budgets hoặc cảnh báo chi phí
+    - Khuyến nghị: Đặt cảnh báo ở mức $10
 
 ### Công cụ và phần mềm cần thiết
 
-Cài đặt các công cụ sau trên máy tính của bạn:
+Cài đặt các công cụ sau trên máy tính:
 
 1. **Text Editor hoặc IDE**
     - VS Code (khuyến nghị): https://code.visualstudio.com/
-    - Hoặc bất kỳ editor nào bạn chọn (Sublime Text, Atom, v.v.)
+    - Hoặc editor khác (Sublime Text, Atom, ...)
 
 2. **Web Browser**
     - Trình duyệt hiện đại (Chrome, Firefox, Safari hoặc Edge)

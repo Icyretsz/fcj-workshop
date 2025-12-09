@@ -1,5 +1,5 @@
 ---
-title : "Part 4: Clean up"
+title : "Clean up"
 date :  "2025-09-15" 
 weight : 5
 chapter : false

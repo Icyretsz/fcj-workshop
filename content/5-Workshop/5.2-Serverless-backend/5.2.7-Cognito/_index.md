@@ -661,7 +661,6 @@ You can add multiple callback URLs for different environments.
 
 URLs where users are redirected after sign-out.
 
-
 If you have a deployed frontend:
 ```
 https://d1234abcd.cloudfront.net
@@ -843,5 +842,3 @@ Your application now has:
 - **User Identity**: Lambda functions know who's making requests
 - **Scalable Auth**: Handles millions of users with Cognito
 - **Secure by Default**: No passwords stored in your database
-
-

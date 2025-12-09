@@ -1,5 +1,5 @@
 ---
-title : "Triển khai Frontend với CloudFront, WAF và S3"
+title : "Phần 1: Triển khai Frontend với CloudFront, WAF và S3"
 date :  "2025-09-15" 
 weight : 1 
 chapter : false
@@ -8,21 +8,21 @@ pre : " <b> 5.1. </b> "
 
 ## Giới thiệu
 
-Chào mừng bạn đến với workshop đầu tiên trong chuỗi ứng dụng serverless của chúng tôi! Trong buổi thực hành này, bạn sẽ học cách triển khai một trang web tĩnh an toàn, hiệu suất cao sử dụng các dịch vụ phân phối nội dung và lưu trữ của AWS.
+Chào mừng bạn đến với workshop đầu tiên trong chuỗi ứng dụng serverless! Trong buổi thực hành này, bạn sẽ học cách triển khai một website tĩnh an toàn, hiệu suất cao sử dụng các dịch vụ AWS như CloudFront, S3 và WAF.
 
-Các ứng dụng web hiện đại yêu cầu phân phối nội dung nhanh chóng, đáng tin cậy và an toàn cho người dùng trên toàn thế giới. Trong workshop này, bạn sẽ xây dựng cơ sở hạ tầng frontend tạo nền tảng cho một ứng dụng serverless sẵn sàng cho production. Bạn sẽ cấu hình Amazon S3 để lưu trữ các tệp trang web tĩnh, thiết lập Amazon CloudFront để phân phối nội dung của bạn trên toàn cầu với độ trễ thấp, và triển khai AWS WAF (Web Application Firewall) để bảo vệ ứng dụng của bạn khỏi các lỗ hổng web phổ biến.
+Các ứng dụng web hiện đại cần phân phối nội dung nhanh, đáng tin cậy và bảo mật cho người dùng toàn cầu. Workshop này giúp bạn xây dựng hạ tầng frontend cho ứng dụng serverless sẵn sàng cho production. Bạn sẽ cấu hình Amazon S3 để lưu trữ file website tĩnh, thiết lập Amazon CloudFront để phân phối nội dung toàn cầu với độ trễ thấp, và triển khai AWS WAF (Web Application Firewall) để bảo vệ ứng dụng khỏi các lỗ hổng web phổ biến.
 
 ![Diagram]( /images/5-Workshop/5.1-Frontend-deployment/5.1/diagram.png)
 
 ### Những gì bạn sẽ xây dựng
 
-Khi kết thúc workshop này, bạn sẽ triển khai được một cơ sở hạ tầng frontend hoàn chỉnh bao gồm:
+Kết thúc workshop, bạn sẽ triển khai được hạ tầng frontend gồm:
 
-- **Static Website Hosting**: Một S3 bucket được cấu hình để phục vụ các tệp HTML, CSS và JavaScript của bạn
-- **Global Content Delivery**: Một CloudFront distribution lưu cache và phân phối nội dung của bạn từ các edge location trên toàn thế giới
-- **Security Layer**: Các quy tắc AWS WAF bảo vệ ứng dụng của bạn khỏi các mối đe dọa phổ biến như SQL injection, cross-site scripting (XSS) và các cuộc tấn công DDoS
+- **Static Website Hosting**: S3 bucket phục vụ file HTML, CSS, JavaScript
+- **Global Content Delivery**: CloudFront distribution lưu cache và phân phối nội dung từ các edge location toàn cầu
+- **Security Layer**: Quy tắc AWS WAF bảo vệ khỏi SQL injection, cross-site scripting (XSS), DDoS
 - **HTTPS Security**: Cấu hình chứng chỉ SSL/TLS cho giao tiếp an toàn
-- **Custom Domain** (Tùy chọn): Trang web của bạn có thể truy cập qua tên miền tùy chỉnh
+- **Custom Domain** (Tùy chọn): Website truy cập qua tên miền tùy chỉnh
 
 ### Tại sao chọn kiến trúc này?
 
@@ -57,8 +57,8 @@ Workshop này được chia thành các phần sau:
     - Kiểm tra security rules
 
 4. **Part 4: Cleanup** (Tùy chọn)
-    - Xóa các tài nguyên để tránh phí
-    - Lưu cấu hình để sử dụng trong tương lai
+    - Xóa tài nguyên để tránh phí
+    - Lưu cấu hình cho lần sau
 
 ### Thời lượng Workshop
 

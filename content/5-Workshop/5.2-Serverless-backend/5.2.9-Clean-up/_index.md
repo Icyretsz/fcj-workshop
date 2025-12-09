@@ -129,7 +129,6 @@ Follow this order to avoid dependency errors:
 3. Delete these roles
 - `api-gw-push-cloudwatch-logs`
 - `workshop-lamda-secretsmng-role`
-- 
 
 ## Summary
 

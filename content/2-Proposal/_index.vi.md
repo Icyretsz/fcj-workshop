@@ -1,108 +1,148 @@
 ---
 title: "Bản đề xuất"
-date: "2025-09-15"
+date: "`r Sys.Date()`"
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-Tại phần này, bạn cần tóm tắt các nội dung trong workshop mà bạn **dự tính** sẽ làm.
+# Nền tảng Thử thách Gõ phím Thời gian Thực
 
-# IoT Weather Platform for Lab Research  
-## Giải pháp AWS Serverless hợp nhất cho giám sát thời tiết thời gian thực  
+<h2 style="text-align:center;">TypeRush</h2>
 
-### 1. Tóm tắt điều hành  
-IoT Weather Platform được thiết kế dành cho nhóm *ITea Lab* tại TP. Hồ Chí Minh nhằm nâng cao khả năng thu thập và phân tích dữ liệu thời tiết. Nền tảng hỗ trợ tối đa 5 trạm thời tiết, có khả năng mở rộng lên 10–15 trạm, sử dụng thiết bị biên Raspberry Pi kết hợp cảm biến ESP32 để truyền dữ liệu qua MQTT. Nền tảng tận dụng các dịch vụ AWS Serverless để cung cấp giám sát thời gian thực, phân tích dự đoán và tiết kiệm chi phí, với quyền truy cập giới hạn cho 5 thành viên phòng lab thông qua Amazon Cognito.  
+## Kiến trúc do AWS vận hành cho một ứng dụng gõ phím nhiều người chơi
 
-### 2. Tuyên bố vấn đề  
-*Vấn đề hiện tại*  
-Các trạm thời tiết hiện tại yêu cầu thu thập dữ liệu thủ công, khó quản lý khi có nhiều trạm. Không có hệ thống tập trung cho dữ liệu hoặc phân tích thời gian thực, và các nền tảng bên thứ ba thường tốn kém và quá phức tạp.  
+### 1. Tóm tắt điều hành
+TypeRush là một ứng dụng web tương tác tái hiện trải nghiệm cốt lõi của Monkeytype đồng thời giới thiệu chức năng nhiều người chơi cho các phiên gõ phím cạnh tranh trực tiếp. Được thiết kế như một bản trình diễn các công nghệ web thời gian thực và kiến trúc đám mây có khả năng mở rộng, nền tảng kết hợp trải nghiệm frontend hiện đại với backend serverless chạy trên AWS.
 
-*Giải pháp*  
-Nền tảng sử dụng AWS IoT Core để tiếp nhận dữ liệu MQTT, AWS Lambda và API Gateway để xử lý, Amazon S3 để lưu trữ (bao gồm data lake), và AWS Glue Crawlers cùng các tác vụ ETL để trích xuất, chuyển đổi, tải dữ liệu từ S3 data lake sang một S3 bucket khác để phân tích. AWS Amplify với Next.js cung cấp giao diện web, và Amazon Cognito đảm bảo quyền truy cập an toàn. Tương tự như Thingsboard và CoreIoT, người dùng có thể đăng ký thiết bị mới và quản lý kết nối, nhưng nền tảng này hoạt động ở quy mô nhỏ hơn và phục vụ mục đích sử dụng nội bộ. Các tính năng chính bao gồm bảng điều khiển thời gian thực, phân tích xu hướng và chi phí vận hành thấp.  
+Người dùng có thể tạo hoặc tham gia phòng gõ phím, thi đấu theo thời gian thực và xem các chỉ số hiệu suất như Words Per Minute (WPM), độ chính xác và xếp hạng. Ứng dụng tận dụng React cho frontend, AWS Lambda và API Gateway (WebSocket) cho đồng bộ thời gian thực, Amazon RDS cho dữ liệu người chơi và Amazon ElastiCache cho dữ liệu phiên. Ứng dụng cũng sử dụng Amazon Bedrock để tạo thử thách hằng ngày. Amazon Cognito bảo đảm truy cập và xác thực người dùng. Giải pháp minh họa cách các dịch vụ cloud-native có thể cung cấp các ứng dụng thời gian thực nhanh, có khả năng mở rộng và chi phí hiệu quả mà không cần quản lý máy chủ truyền thống.
 
-*Lợi ích và hoàn vốn đầu tư (ROI)*  
-Giải pháp tạo nền tảng cơ bản để các thành viên phòng lab phát triển một nền tảng IoT lớn hơn, đồng thời cung cấp nguồn dữ liệu cho những người nghiên cứu AI phục vụ huấn luyện mô hình hoặc phân tích. Nền tảng giảm bớt báo cáo thủ công cho từng trạm thông qua hệ thống tập trung, đơn giản hóa quản lý và bảo trì, đồng thời cải thiện độ tin cậy dữ liệu. Chi phí hàng tháng ước tính 0,66 USD (theo AWS Pricing Calculator), tổng cộng 7,92 USD cho 12 tháng. Tất cả thiết bị IoT đã được trang bị từ hệ thống trạm thời tiết hiện tại, không phát sinh chi phí phát triển thêm. Thời gian hoàn vốn 6–12 tháng nhờ tiết kiệm đáng kể thời gian thao tác thủ công.  
+### 2. Tuyên bố vấn đề
+### Vấn đề là gì?
+Các nền tảng gõ phím hiện có thường bị giới hạn ở chế độ một người chơi, thiếu tương tác nhiều người chơi theo thời gian thực hoặc ví dụ triển khai mở. Hầu hết các giải pháp nhiều người chơi yêu cầu máy chủ chuyên dụng hoặc hạ tầng phức tạp, khiến chi phí cao và khó bảo trì. Đối với nhà phát triển và người đam mê, không có ví dụ serverless dễ tiếp cận nào thể hiện đồng bộ thời gian thực, cập nhật theo sự kiện và quản lý người dùng an toàn trong một hệ thống tích hợp.
 
-### 3. Kiến trúc giải pháp  
-Nền tảng áp dụng kiến trúc AWS Serverless để quản lý dữ liệu từ 5 trạm dựa trên Raspberry Pi, có thể mở rộng lên 15 trạm. Dữ liệu được tiếp nhận qua AWS IoT Core, lưu trữ trong S3 data lake và xử lý bởi AWS Glue Crawlers và ETL jobs để chuyển đổi và tải vào một S3 bucket khác cho mục đích phân tích. Lambda và API Gateway xử lý bổ sung, trong khi Amplify với Next.js cung cấp bảng điều khiển được bảo mật bởi Cognito.  
+### Giải pháp
+Dự án này cung cấp một nền tảng gõ phím thời gian thực theo kiểu serverless cho phép nhiều người dùng kết nối, gõ đồng thời và thấy phản hồi tức thì về tiến độ của họ. Nó được thiết kế nhẹ, chi phí hiệu quả và có khả năng mở rộng.
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+### Lợi ích và Hoàn vốn (ROI)
+Dự án vừa là nền tảng học tập cho nhà phát triển vừa là ứng dụng hướng tới người dùng. Nó trình diễn các thực tiễn tốt nhất trong kiến trúc hướng sự kiện, triển khai WebSocket và khả năng mở rộng dựa trên đám mây với chi phí vận hành tối thiểu. Đối với người dùng, nó mang lại trải nghiệm gõ phím mang tính xã hội, lôi cuốn. Đối với nhà phát triển, nó cung cấp tài liệu tham khảo giáo dục để xây dựng các hệ thống serverless thời gian thực.
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+Nền tảng không cần bảo trì máy chủ liên tục, bảo đảm:
+* Tính bền vững dài hạn
+* Khả năng mở rộng nhanh
+* Chi phí vận hành thấp
 
-*Dịch vụ AWS sử dụng*  
-- *AWS IoT Core*: Tiếp nhận dữ liệu MQTT từ 5 trạm, mở rộng lên 15.  
-- *AWS Lambda*: Xử lý dữ liệu và kích hoạt Glue jobs (2 hàm).  
-- *Amazon API Gateway*: Giao tiếp với ứng dụng web.  
-- *Amazon S3*: Lưu trữ dữ liệu thô (data lake) và dữ liệu đã xử lý (2 bucket).  
-- *AWS Glue*: Crawlers lập chỉ mục dữ liệu, ETL jobs chuyển đổi và tải dữ liệu.  
-- *AWS Amplify*: Lưu trữ giao diện web Next.js.  
-- *Amazon Cognito*: Quản lý quyền truy cập cho người dùng phòng lab.  
+### 3. Kiến trúc giải pháp
+Nền tảng sử dụng kiến trúc AWS serverless để quản lý một ứng dụng thử thách gõ phím thời gian thực. Dữ liệu được xử lý và lưu trữ bằng nhiều dịch vụ AWS, và frontend là một giao diện hiện đại, đáp ứng. Kiến trúc chi tiết bên dưới:
+![TypeRush architecture](/images/2-Proposal/typerush_diagram.png)
 
-*Thiết kế thành phần*  
-- *Thiết bị biên*: Raspberry Pi thu thập và lọc dữ liệu cảm biến, gửi tới IoT Core.  
-- *Tiếp nhận dữ liệu*: AWS IoT Core nhận tin nhắn MQTT từ thiết bị biên.  
-- *Lưu trữ dữ liệu*: Dữ liệu thô lưu trong S3 data lake; dữ liệu đã xử lý lưu ở một S3 bucket khác.  
-- *Xử lý dữ liệu*: AWS Glue Crawlers lập chỉ mục dữ liệu; ETL jobs chuyển đổi để phân tích.  
-- *Giao diện web*: AWS Amplify lưu trữ ứng dụng Next.js cho bảng điều khiển và phân tích thời gian thực.  
-- *Quản lý người dùng*: Amazon Cognito giới hạn 5 tài khoản hoạt động.  
+### Dịch vụ AWS sử dụng
+- **Amazon S3**: Lưu trữ frontend tĩnh.
+- **CloudFront**: Cung cấp CDN cho frontend và API.
+- **AWS WAF**: Hoạt động như tường lửa cho CloudFront.
+- **Route 53**: Quản lý tên miền và định tuyến DNS.
+- **Amazon Cognito**: Xử lý đăng nhập và đăng ký người dùng.
+- **API Gateway**: Cổng vào cho các microservice và kết nối tới ECS riêng tư qua VPC Link.
+- **AWS Lambda**: Vận hành microservice record và text, và WebSocket API cho microservice game.
+- **Amazon RDS**: Lưu trữ bản ghi và bảng xếp hạng.
+- **DynamoDB**: Lưu trữ dữ liệu văn bản.
+- **AWS Bedrock (Claude Sonnet 3)**: Hoạt động như mô hình LLM để tạo văn bản.
+- **Amazon SNS**: Quản lý thông báo và cảnh báo.
+- **AWS CloudWatch**: Xử lý logging và monitoring.
+- **AWS Secrets Manager**: Lưu trữ bí mật cho cơ sở dữ liệu và API.
+- **Amazon ECS (Fargate)**: Lưu trữ backend cốt lõi của game.
+- **Elastic Load Balancer**: Cân bằng tải cho dịch vụ game.
+- **ElastiCache (Redis)**: Cache dữ liệu game thời gian thực.
+- **CodePipeline**: Điều phối build và triển khai.
+- **CodeBuild**: Build image Docker và dịch vụ Lambda.
+- **ECR (Elastic Container Registry)**: Lưu trữ image Docker.
+- **GitLab**: Kích hoạt pipeline build.
 
-### 4. Triển khai kỹ thuật  
-*Các giai đoạn triển khai*  
-Dự án gồm 2 phần — thiết lập trạm thời tiết biên và xây dựng nền tảng thời tiết — mỗi phần trải qua 4 giai đoạn:  
-1. *Nghiên cứu và vẽ kiến trúc*: Nghiên cứu Raspberry Pi với cảm biến ESP32 và thiết kế kiến trúc AWS Serverless (1 tháng trước kỳ thực tập).  
-2. *Tính toán chi phí và kiểm tra tính khả thi*: Sử dụng AWS Pricing Calculator để ước tính và điều chỉnh (Tháng 1).  
-3. *Điều chỉnh kiến trúc để tối ưu chi phí/giải pháp*: Tinh chỉnh (ví dụ tối ưu Lambda với Next.js) để đảm bảo hiệu quả (Tháng 2).  
-4. *Phát triển, kiểm thử, triển khai*: Lập trình Raspberry Pi, AWS services với CDK/SDK và ứng dụng Next.js, sau đó kiểm thử và đưa vào vận hành (Tháng 2–3).  
 
-*Yêu cầu kỹ thuật*  
-- *Trạm thời tiết biên*: Cảm biến (nhiệt độ, độ ẩm, lượng mưa, tốc độ gió), vi điều khiển ESP32, Raspberry Pi làm thiết bị biên. Raspberry Pi chạy Raspbian, sử dụng Docker để lọc dữ liệu và gửi 1 MB/ngày/trạm qua MQTT qua Wi-Fi.  
-- *Nền tảng thời tiết*: Kiến thức thực tế về AWS Amplify (lưu trữ Next.js), Lambda (giảm thiểu do Next.js xử lý), AWS Glue (ETL), S3 (2 bucket), IoT Core (gateway và rules), và Cognito (5 người dùng). Sử dụng AWS CDK/SDK để lập trình (ví dụ IoT Core rules tới S3). Next.js giúp giảm tải Lambda cho ứng dụng web fullstack.  
+### Thiết kế thành phần
+- **Frontend Layer**: UI hiện đại, đáp ứng xây dựng bằng React, lưu trữ trên Amazon S3 và phục vụ qua Amazon CloudFront với AWS WAF và Amazon Route 53 để nâng cao hiệu năng, phân phối nội dung toàn cầu và bảo mật mạnh mẽ.
+- **API & Giao tiếp thời gian thực**: AWS API Gateway đóng vai trò cổng hợp nhất cho cả REST và WebSocket API, triển khai rate limiting, xác thực và kiểm tra yêu cầu. WebSocket API cung cấp tương tác nhiều người chơi theo thời gian thực.
+- **Compute & Business Logic**: AWS Lambda xử lý các tác vụ serverless như lưu trữ dữ liệu và tạo văn bản dùng AI. Amazon ECS với AWS Fargate lưu trữ các dịch vụ backend dạng container, bao gồm server trò chơi. VPC PrivateLink kết nối API Gateway với các container ECS Fargate, và Elastic Load Balancer phân phối lưu lượng.
+- **Data Layer**: Amazon RDS lưu dữ liệu quan hệ như hồ sơ người dùng và bảng xếp hạng. Amazon DynamoDB quản lý dữ liệu phi quan hệ như văn bản tạo động. Amazon ElastiCache (Redis) cung cấp cache trong bộ nhớ cho dữ liệu truy cập thường xuyên.
+- **Xác thực & Quản lý người dùng**: Amazon Cognito xử lý đăng ký, xác thực và ủy quyền an toàn, hỗ trợ đăng nhập xã hội và liên kết. Amazon Secrets Manager bảo mật lưu trữ các bí mật như khóa API.
+- **CI/CD & DevOps**: AWS CodeBuild và AWS CodePipeline cho phép tích hợp liên tục và triển khai liên tục (CI/CD) trên tất cả các thành phần ứng dụng, tự động hóa build, test và triển khai.
 
-### 5. Lộ trình & Mốc triển khai  
-- *Trước thực tập (Tháng 0)*: 1 tháng lên kế hoạch và đánh giá trạm cũ.  
-- *Thực tập (Tháng 1–3)*:  
-    - Tháng 1: Học AWS và nâng cấp phần cứng.  
-    - Tháng 2: Thiết kế và điều chỉnh kiến trúc.  
-    - Tháng 3: Triển khai, kiểm thử, đưa vào sử dụng.  
-- *Sau triển khai*: Nghiên cứu thêm trong vòng 1 năm.  
+### 4. Triển khai kỹ thuật
+#### Các giai đoạn triển khai
+Dự án này có hai phần — thiết lập hạ tầng đám mây và xây dựng ứng dụng — mỗi phần theo 4 giai đoạn:
+- **Xây dựng lý thuyết và vẽ kiến trúc:** Nghiên cứu và thiết kế kiến trúc AWS serverless.
+- **Tính giá và kiểm tra tính thực tiễn:** Sử dụng AWS Pricing Calculator để ước tính chi phí và điều chỉnh khi cần.
+- **Sửa kiến trúc cho phù hợp chi phí/giải pháp:** Tinh chỉnh thiết kế để giữ chi phí hiệu quả và dễ dùng.
+- **Phát triển, kiểm thử và triển khai:** Lập trình ứng dụng và các dịch vụ AWS, sau đó kiểm thử và phát hành lên production.
 
-### 6. Ước tính ngân sách  
-Có thể xem chi phí trên [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01)  
-Hoặc tải [tệp ước tính ngân sách](../attachments/budget_estimation.pdf).  
+#### Yêu cầu kỹ thuật
+- **Frontend:** Kiến thức thực hành về React.
+- **Backend:** Kinh nghiệm với các dịch vụ AWS bao gồm Lambda, API Gateway, ECS, Fargate, RDS, DynamoDB và ElastiCache.
+- **CI/CD:** Quen thuộc với CodePipeline, CodeBuild và GitLab.
+- **Hạ tầng như Mã (IaC):** Sử dụng AWS CDK/SDK để mã hóa tương tác.
+### 5. Dòng thời gian & Các mốc
+**Dòng thời gian dự án**
+- **Tháng 1:** Học tất cả về AWS và các dịch vụ AWS.
+- **Tháng 2:** Bắt đầu lập kế hoạch cho dự án và các dịch vụ AWS sẽ triển khai.
+- **Tháng 3:** Phát triển, triển khai và ra mắt.
 
-*Chi phí hạ tầng*  
-- AWS Lambda: 0,00 USD/tháng (1.000 request, 512 MB lưu trữ).  
-- S3 Standard: 0,15 USD/tháng (6 GB, 2.100 request, 1 GB quét).  
-- Truyền dữ liệu: 0,02 USD/tháng (1 GB vào, 1 GB ra).  
-- AWS Amplify: 0,35 USD/tháng (256 MB, request 500 ms).  
-- Amazon API Gateway: 0,01 USD/tháng (2.000 request).  
-- AWS Glue ETL Jobs: 0,02 USD/tháng (2 DPU).  
-- AWS Glue Crawlers: 0,07 USD/tháng (1 crawler).  
-- MQTT (IoT Core): 0,08 USD/tháng (5 thiết bị, 45.000 tin nhắn).  
+### 6. Ước tính ngân sách
 
-*Tổng*: 0,7 USD/tháng, 8,40 USD/12 tháng  
-- *Phần cứng*: 265 USD một lần (Raspberry Pi 5 và cảm biến).  
+---> [Tệp Ước tính Ngân sách](/attachments/costs.pdf) <---
 
-### 7. Đánh giá rủi ro  
-*Ma trận rủi ro*  
-- Mất mạng: Ảnh hưởng trung bình, xác suất trung bình.  
-- Hỏng cảm biến: Ảnh hưởng cao, xác suất thấp.  
-- Vượt ngân sách: Ảnh hưởng trung bình, xác suất thấp.  
+#### Chi phí hạ tầng
 
-*Chiến lược giảm thiểu*  
-- Mạng: Lưu trữ cục bộ trên Raspberry Pi với Docker.  
-- Cảm biến: Kiểm tra định kỳ, dự phòng linh kiện.  
-- Chi phí: Cảnh báo ngân sách AWS, tối ưu dịch vụ.  
+* Dịch vụ AWS:
+    * Amazon Route 53: $0.90
+    * AWS Web Application Firewall (WAF): $9.03
+    * Amazon CloudFront: $0.40 ($0 với free tier)
+    * S3 Standard: $0.11 ($0 với free tier)
+    * Truyền dữ liệu: $0.00 ($0 với free tier)
+    * Amazon API Gateway: $15.92 ($0 với free tier)
+    * Amazon Cognito: $0.00
+    * Network Load Balancer: $18.49
+    * AWS Fargate: $8.88
+    * AWS Lambda: $0.02 ($0 với free tier)
+    * Amazon ElastiCache: $16.06
+    * Amazon RDS for PostgreSQL: $39.37 ($0 với free tier)
+    * AWS Bedrock (Workload 1): $2.63
+    * DynamoDB: $0.03 ($0 với free tier)
+    * AWS Secrets Manager: $4.00
+    * AWS CodePipeline: $1.00 ($0 với free tier)
+    * AWS CodeBuild: $5.00 ($0 với free tier)
 
-*Kế hoạch dự phòng*  
-- Quay lại thu thập thủ công nếu AWS gặp sự cố.  
-- Sử dụng CloudFormation để khôi phục cấu hình liên quan đến chi phí.  
+- Với tài khoản free tier: khoảng $60/tháng
+- Với tài khoản trả phí: khoảng $122/tháng
+> Cả hai mức đều giả định dịch vụ chạy 24/7; thực tế có thể thấp hơn nhiều.
 
-### 8. Kết quả kỳ vọng  
-*Cải tiến kỹ thuật*: Dữ liệu và phân tích thời gian thực thay thế quy trình thủ công. Có thể mở rộng tới 10–15 trạm.  
-*Giá trị dài hạn*: Nền tảng dữ liệu 1 năm cho nghiên cứu AI, có thể tái sử dụng cho các dự án tương lai.
+### 7. Đánh giá rủi ro
+#### Ma trận rủi ro
+- Tích hợp kỹ thuật: Ảnh hưởng trung bình, xác suất trung bình.
+- Hiệu năng và Khả năng mở rộng: Ảnh hưởng cao, xác suất trung bình.
+- Quản lý chi phí: Ảnh hưởng trung bình, xác suất trung bình.
+- Bảo mật: Ảnh hưởng cao, xác suất thấp.
+- Độ tin cậy dữ liệu: Ảnh hưởng trung bình, xác suất thấp.
+- Rủi ro vận hành: Ảnh hưởng thấp, xác suất trung bình.
+- Đường cong học tập: Ảnh hưởng trung bình, xác suất cao.
+
+#### Chiến lược giảm thiểu
+- Tích hợp kỹ thuật: Rủi ro này được giảm thiểu bằng triển khai theo giai đoạn và tuân thủ các thực tiễn tốt nhất của AWS.
+- Hiệu năng và Khả năng mở rộng: Tối ưu giao tiếp WebSocket, tận dụng cache Redis và giám sát với CloudWatch để duy trì độ phản hồi.
+- Quản lý chi phí: Kiểm soát qua AWS Budgets, cảnh báo sử dụng và chính sách auto-scaling.
+- Bảo mật: Giảm thiểu bằng AWS WAF, Cognito, Secrets Manager và chính sách IAM chặt chẽ.
+- Độ tin cậy dữ liệu: Ranh giới sở hữu dữ liệu rõ ràng và ghi chép giao dịch bảo đảm tính nhất quán.
+- Rủi ro vận hành: Rủi ro trong pipeline CI/CD được giảm bằng triển khai theo giai đoạn và cấu hình rollback.
+- Đường cong học tập: Được giải quyết thông qua học tập có chủ đích và thực hành trong giai đoạn đầu của dự án.
+
+#### Kế hoạch dự phòng
+- Nếu dịch vụ gặp sự cố: Một trang bảo trì sẽ hiển thị cho người dùng.
+- Nếu chế độ nhiều người chơi quá chậm: Tạm thời vô hiệu hóa chế độ nhiều người chơi, nhưng chế độ một người chơi vẫn hoạt động.
+- Nếu chi phí tăng đột biến: Thay đổi gây ra tăng chi phí sẽ được đảo ngược ngay lập tức.
+- Nếu bản cập nhật mới làm hỏng trang: Hệ thống sẽ tự động quay lại phiên bản hoạt động trước đó.
+
+### 8. Kết quả kỳ vọng
+#### Cải tiến kỹ thuật:
+Sau khi hoàn tất, dự án sẽ cung cấp một nền tảng gõ phím nhiều người chơi thời gian thực có khả năng mở rộng, an toàn và đầy đủ chức năng, được xây dựng hoàn toàn trên AWS.
+
+#### Giá trị dài hạn:
+Dự án sẽ minh họa các thực tiễn tốt nhất trong kiến trúc serverless, thiết kế hướng sự kiện và tự động hóa CI/CD. Với người dùng, nó mang lại trải nghiệm gõ phím nhiều người chơi mượt mà, hấp dẫn. Với chúng tôi, nó là mô hình tham chiếu thực hành đầu tiên để xây dựng các ứng dụng web serverless thời gian thực trên AWS với chi phí và bảo trì tối thiểu.

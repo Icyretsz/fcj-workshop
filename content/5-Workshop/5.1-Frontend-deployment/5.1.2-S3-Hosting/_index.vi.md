@@ -1,55 +1,55 @@
 ---
-title : "Part 1: S3 Static Website Hosting"
+title : "S3 Static Website Hosting"
 date :  "2025-09-15" 
-weight : 1 
+weight : 2 
 chapter : false
 pre : " <b> 5.1.2 </b> "
 ---
 
 ## Tổng quan
 
-Trong phần này, bạn sẽ thiết lập Amazon S3 để lưu trữ trang web tĩnh của mình. S3 (Simple Storage Service) cung cấp giải pháp tiết kiệm chi phí và có độ bền cao để lưu trữ nội dung tĩnh như HTML, CSS, JavaScript và hình ảnh.
+Phần này bạn sẽ thiết lập Amazon S3 để lưu trữ website tĩnh. S3 (Simple Storage Service) là giải pháp tiết kiệm chi phí và độ bền cao cho việc lưu trữ nội dung tĩnh như HTML, CSS, JavaScript và hình ảnh.
 
-**Những gì bạn sẽ hoàn thành:**
+**Bạn sẽ thực hiện:**
 - Clone repository ứng dụng mẫu
 - Build ứng dụng frontend
 - Tạo và cấu hình S3 bucket
-- Upload các tệp website lên S3
-- Bật static website hosting
-- Kiểm tra website của bạn
+- Upload file website lên S3
+- Bật chế độ static website hosting
+- Kiểm tra website
 
 **Thời gian ước tính**: 30 phút
 
-## Cân nhắc về chi phí
+## Lưu ý về chi phí
 ### Free-tier:
-- S3 không có lợi ích free-tier
+- S3 không có free-tier riêng cho phần này
 
 ### Paid-tier
-1. Ngay cả paid tier chi phí cũng rất nhỏ cho workshop của chúng ta
-4. Tổng thể: <$0 (dọn dẹp ngay sau khi hoàn thành workshop)
+1. Chi phí rất thấp cho workshop này
+4. Tổng: <$0 (xóa ngay sau khi hoàn thành workshop)
 
-## Bước 1: Chuẩn bị ứng dụng của bạn
+## Bước 1: Chuẩn bị ứng dụng
 
-### 1.1 Clone Sample Repository
+### 1.1 Clone repository mẫu
 
 Mở terminal hoặc command prompt và chạy:
 ```bash
-git clone https://github.com/Icyretsz/fcj-serverless-workshop.git
+git clone https://github.com/Icyretsz/fcj-workshop-serverless-frontend.git
 ```
 
-### 1.2 Install Dependencies
+### 1.2 Cài đặt dependencies
 
-Ứng dụng mẫu sử dụng Node.js và npm. Cài đặt các dependencies cần thiết:
+Ứng dụng mẫu sử dụng Node.js và npm. Cài đặt các dependencies:
 ```bash
 npm install
 ```
 
 **Khắc phục sự cố:**
-- Nếu bạn chưa cài đặt Node.js, tải về từ https://nodejs.org/ (khuyến nghị phiên bản LTS)
-- Xác minh cài đặt: `node --version` và `npm --version`
-- Phiên bản tối thiểu yêu cầu: Node.js 16.x trở lên
+- Nếu chưa cài Node.js, tải tại https://nodejs.org/ (khuyến nghị bản LTS)
+- Kiểm tra cài đặt: `node --version` và `npm --version`
+- Yêu cầu tối thiểu: Node.js 16.x trở lên
 
-### 1.3 Build Application
+### 1.3 Build ứng dụng
 
 Điều hướng đến thư mục frontend và build phiên bản sẵn sàng cho production:
 ```bash
@@ -62,7 +62,7 @@ npm run build
 - Tối ưu hóa assets cho production (minification, bundling)
 - Tạo thư mục `dist/` với tất cả các tệp có thể triển khai
 
-### 1.4 Verify Build Output
+### 1.4 Xác minh đầu ra build
 
 Kiểm tra nội dung của thư mục build:
 ```bash
@@ -85,7 +85,7 @@ dist/
 
 ## Bước 2: Tạo S3 Bucket
 
-### 2.1 Navigate to S3 Console
+### 2.1 Điều hướng đến S3 Console
 
 1. Đăng nhập vào AWS Management Console
 2. Trong thanh tìm kiếm ở trên cùng, gõ "S3"
@@ -93,7 +93,7 @@ dist/
 
 ![S3 Console Navigation]( /images/5-Workshop/5.1-Frontend-deployment/5.1.2-S3-Hosting/1.png)
 
-### 2.2 Create New Bucket
+### 2.2 Tạo Bucket mới
 
 1. Click nút **Create bucket**
 2. Cấu hình các thiết lập sau:
@@ -107,7 +107,7 @@ dist/
 
 ![S3 Bucket Creation]( /images/5-Workshop/5.1-Frontend-deployment/5.1.2-S3-Hosting/2.png)
 
-### 2.3 Configure Bucket Settings
+### 2.3 Cấu hình cài đặt Bucket
 
 **Object Ownership:**
 - Giữ mặc định: **ACLs disabled (recommended)**
@@ -135,14 +135,14 @@ dist/
 **Advanced settings:**
 - Giữ tất cả mặc định
 
-### 2.4 Create the Bucket
+### 2.4 Tạo Bucket
 
 1. Cuộn xuống dưới cùng và click **Create bucket**
 2. Bạn sẽ thấy thông báo thành công: "Successfully created bucket 'workshop-frontend-[your-name]-[random-string]'"
 
 ## Bước 3: Cấu hình Static Website Hosting
 
-### 3.1 Enable Website Hosting
+### 3.1 Bật Website Hosting
 
 1. Click vào tên bucket mới tạo của bạn
 2. Điều hướng đến tab **Properties**
@@ -151,7 +151,7 @@ dist/
 
 ![S3 Properties Tab]( /images/5-Workshop/5.1-Frontend-deployment/5.1.2-S3-Hosting/4.png)
 
-### 3.2 Configure Hosting Settings
+### 3.2 Cấu hình cài đặt Hosting
 
 **Static website hosting:**
 - Chọn **Enable**
@@ -170,9 +170,9 @@ dist/
 
 - Click **Save changes**
 
-### 3.3 View website endpoint
+### 3.3 Xem endpoint website
 1. Cuộn xuống phần **Static website hosting**
-2. **Copy Bucket website endpoint URL**
+2. **Sao chép URL Bucket website endpoint**
     - Ví dụ: `http://workshop-frontend-john-a1b2c3.s3-website-us-east-1.amazonaws.com`
     - **Lưu URL này** - bạn sẽ sử dụng nó để kiểm tra website
 
@@ -180,22 +180,22 @@ dist/
 
 ## Bước 4: Upload các tệp Website
 
-### 4.1 Upload via AWS Console
+### 4.1 Upload qua AWS Console
 
 1. Điều hướng đến tab **Objects** trong bucket của bạn
 2. Click **Upload**
 
 ![S3 Upload Button]( /images/5-Workshop/5.1-Frontend-deployment/5.1.2-S3-Hosting/7.png)
 
-### 4.2 Add Files
+### 4.2 Thêm tệp
 
-**Option A: Drag and Drop**
+**Tùy chọn A: Kéo và Thả**
 1. Mở file explorer/finder của bạn
 2. Điều hướng đến thư mục `frontend/dist/` của bạn
 3. Chọn TẤT CẢ các tệp và thư mục bên trong thư mục build
 4. Kéo chúng vào khu vực upload
 
-**Option B: Browse Files**
+**Tùy chọn B: Duyệt tệp**
 1. Click **Add files** và **Add folder**
 2. Điều hướng đến `frontend/dist/`
 3. Chọn tất cả nội dung
@@ -206,7 +206,7 @@ dist/
 
 ![S3 Upload Files]( /images/5-Workshop/5.1-Frontend-deployment/5.1.2-S3-Hosting/8.png)
 
-### 4.3 Configure Upload Settings
+### 4.3 Cấu hình cài đặt Upload
 
 **Permissions:**
 - Giữ mặc định (kế thừa từ bucket)
@@ -217,7 +217,7 @@ dist/
 **Storage class:**
 - Giữ mặc định: **Standard**
 
-### 4.4 Complete Upload
+### 4.4 Hoàn tất Upload
 
 1. Cuộn xuống và click **Upload**
 2. Đợi quá trình upload hoàn tất
@@ -226,7 +226,7 @@ dist/
 
 ![S3 Upload Success]( /images/5-Workshop/5.1-Frontend-deployment/5.1.2-S3-Hosting/9.png)
 
-### 4.5 Verify Upload
+### 4.5 Xác minh Upload
 
 Quay lại bucket của bạn, bạn sẽ thấy:
 - `index.html`
@@ -236,7 +236,7 @@ Quay lại bucket của bạn, bạn sẽ thấy:
 
 ## Bước 5: Cấu hình Bucket Policy cho Public Access
 
-### 5.1 Create Bucket Policy
+### 5.1 Tạo Bucket Policy
 
 1. Điều hướng đến tab **Permissions**
 2. Cuộn xuống phần **Bucket policy**
@@ -244,9 +244,9 @@ Quay lại bucket của bạn, bạn sẽ thấy:
 
 ![S3 Permissions Tab]( /images/5-Workshop/5.1-Frontend-deployment/5.1.2-S3-Hosting/10.png)
 
-### 5.2 Add Policy JSON
+### 5.2 Thêm Policy JSON
 
-Copy và paste policy sau, **thay thế `YOUR-BUCKET-NAME`** bằng tên bucket thực tế của bạn:
+Sao chép và dán policy sau, **thay thế `YOUR-BUCKET-NAME`** bằng tên bucket thực tế của bạn:
 ```json
 {
     "Version": "2012-10-17",
@@ -284,13 +284,13 @@ Copy và paste policy sau, **thay thế `YOUR-BUCKET-NAME`** bằng tên bucket 
 
 ![S3 Bucket Policy]( /images/5-Workshop/5.1-Frontend-deployment/5.1.2-S3-Hosting/11.png)
 
-### 5.3 Save Policy
+### 5.3 Lưu Policy
 
 - Click **Save changes**
 
 ## Bước 6: Kiểm tra Website của bạn
 
-### 6.1 Access Your Website
+### 6.1 Truy cập Website
 
 1. Sử dụng **Bucket website endpoint** URL bạn đã lưu trước đó
 2. Mở nó trong trình duyệt web của bạn
@@ -302,13 +302,13 @@ Copy và paste policy sau, **thay thế `YOUR-BUCKET-NAME`** bằng tên bucket 
 
 ![Website Success]( /images/5-Workshop/5.1-Frontend-deployment/5.1.2-S3-Hosting/12.png)
 
-### 6.2 Test Navigation
+### 6.2 Kiểm tra Điều hướng
 
 1. Click qua các trang khác nhau của ứng dụng
 2. Xác minh hình ảnh và styles tải đúng cách
 3. Kiểm tra browser developer console để tìm lỗi (F12 hoặc right-click → Inspect)
 
-### 6.3 Test Direct Object Access
+### 6.3 Kiểm tra Truy cập Đối tượng Trực tiếp
 
 Bạn cũng có thể truy cập trực tiếp các tệp riêng lẻ:
 - `http://your-bucket-endpoint/index.html`
